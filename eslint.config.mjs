@@ -1,4 +1,4 @@
-echo 'import { dirname } from "path";
+import { dirname } from "path";
 import { fileURLToPath } from "url";
 import { FlatCompat } from "@eslint/eslintrc";
 
@@ -7,8 +7,6 @@ const __dirname = dirname(__filename);
 
 const compat = new FlatCompat({ baseDirectory: __dirname });
 
-const config = [
-  ...compat.extends("next/core-web-vitals"),
-];
+const config = [...compat.extends("next/core-web-vitals")];
 
-export default config;' > eslint.config.mjs
+export default config;
