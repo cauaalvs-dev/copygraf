@@ -13,9 +13,6 @@ const CSP = [
 ].join("; ");
 
 const nextConfig: NextConfig = {
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
   async headers() {
     return [
       {
