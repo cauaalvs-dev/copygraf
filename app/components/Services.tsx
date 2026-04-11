@@ -1,11 +1,8 @@
-import { Service, SERVICES } from "@/app/lib/constants";
+import { SERVICES } from "@/app/lib/constants";
+import type { Service } from "@/app/lib/constants";
 import {
-  LayoutGrid,
-  Type,
-  Printer,
-  Flag,
-  Shirt,
-  FileText,
+  LayoutGrid, Type, Printer,
+  Flag, Shirt, FileText,
 } from "lucide-react";
 
 const ICON_MAP: Record<Service["icon"], React.ReactNode> = {
@@ -20,93 +17,70 @@ const ICON_MAP: Record<Service["icon"], React.ReactNode> = {
 function ServiceCard({ service }: { service: Service }) {
   return (
     <article
-      className="group relative overflow-hidden p-8 transition-colors duration-300 bg-[var(--surface)] hover:bg-[var(--surface-2)]"
+      className="group bg-white rounded-xl border p-6 flex flex-col gap-4 transition-all duration-200 hover:border-[var(--blue)] hover:shadow-[0_4px_20px_rgba(26,86,219,.08)]"
+      style={{ borderColor: "var(--border)" }}
       role="listitem"
     >
-      <span
-        className="absolute top-0 left-0 right-0 h-[2px] scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100"
-        style={{
-          background: "linear-gradient(135deg, #00c8f0 0%, #1847f0 50%, #f0005a 100%)",
-        }}
-        aria-hidden="true"
-      />
-
       <div
-        className="w-[42px] h-[42px] rounded-[8px] border flex items-center justify-center mb-5 transition-all duration-300"
-        style={{
-          border: "1px solid var(--border)",
-          background: "var(--surface-2)",
-          color: "var(--muted)",
-        }}
+        className="w-10 h-10 rounded-lg flex items-center justify-center transition-colors duration-200 group-hover:bg-[var(--blue)] group-hover:text-white"
+        style={{ background: "var(--blue-lt)", color: "var(--blue)" }}
+        aria-hidden="true"
       >
-        <span className="group-hover:[&>svg]:stroke-[var(--cyan)] transition-colors duration-300">
-          {ICON_MAP[service.icon]}
-        </span>
+        {ICON_MAP[service.icon]}
       </div>
 
-      <h3
-        className="mb-2"
-        style={{
-          fontFamily: "var(--font-display)",
-          fontSize: "1.3rem",
-          letterSpacing: ".04em",
-        }}
-      >
-        {service.name}
-      </h3>
+      <div>
+        <h3 className="font-semibold text-base mb-1.5" style={{ color: "var(--text)" }}>
+          {service.name}
+        </h3>
+        <p className="text-sm leading-relaxed" style={{ color: "var(--muted)" }}>
+          {service.description}
+        </p>
+      </div>
 
-      <p style={{ fontSize: ".86rem", color: "var(--muted)", lineHeight: 1.62 }}>
-        {service.description}
-      </p>
-
-      <span
-        className="inline-block mt-4 px-[0.65rem] py-[0.18rem] rounded-full border"
-        style={{
-          border: "1px solid var(--border)",
-          fontFamily: "var(--font-mono)",
-          fontSize: ".67rem",
-          letterSpacing: ".08em",
-          color: "var(--muted)",
-        }}
-      >
-        {service.tag}
-      </span>
+      <div className="mt-auto">
+        <span
+          className="inline-block text-xs font-semibold px-2.5 py-1 rounded-md"
+          style={{ background: "var(--bg)", color: "var(--muted)" }}
+        >
+          {service.tag}
+        </span>
+      </div>
     </article>
   );
 }
 
 export default function Services() {
   return (
-    <section id="servicos" aria-labelledby="svc-title" className="py-24" style={{ background: "var(--surface)" }}>
-      <div className="w-full max-w-[1160px] mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-end mb-14">
+    <section
+      id="servicos"
+      aria-labelledby="svc-title"
+      className="py-20"
+      style={{ background: "var(--bg)" }}
+    >
+      <div className="w-full max-w-[1200px] mx-auto px-6">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
           <div>
             <p
-              className="flex items-center gap-2 mb-3"
-              style={{ fontFamily: "var(--font-mono)", fontSize: ".72rem", letterSpacing: ".16em", color: "var(--cyan)" }}
+              className="text-xs font-semibold uppercase tracking-widest mb-2"
+              style={{ color: "var(--blue)", fontFamily: "var(--font-mono, monospace)" }}
             >
-              <span className="w-5 h-px bg-[var(--cyan)]" aria-hidden="true" />
               Nossos Serviços
             </p>
             <h2
               id="svc-title"
-              style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.4rem,5.5vw,4.2rem)", lineHeight: .97, letterSpacing: ".02em" }}
+              className="font-bold tracking-tight"
+              style={{ fontSize: "clamp(1.6rem, 3.5vw, 2.25rem)", color: "var(--text)" }}
             >
-              Tudo que sua <span className="grad-text">marca precisa</span>
+              O que oferecemos
             </h2>
           </div>
-          <p style={{ fontSize: ".95rem", color: "var(--muted)", lineHeight: 1.72 }}>
-            Atendemos do MEI que está abrindo seu negócio à grande empresa com campanha de
-            comunicação visual de alto impacto. Qualidade premium em cada projeto,
-            independente do volume.
+          <p className="text-sm max-w-md text-right hidden md:block" style={{ color: "var(--muted)" }}>
+            Do MEI à grande empresa. Qualidade premium em cada projeto, independente do volume.
           </p>
         </div>
 
-        <div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 rounded-[18px] overflow-hidden"
-          style={{ gap: "1px", background: "var(--border)" }}
-          role="list"
-        >
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5" role="list">
           {SERVICES.map((service) => (
             <ServiceCard key={service.name} service={service} />
           ))}

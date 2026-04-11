@@ -13,9 +13,7 @@ export default function Home() {
       <a href="#main" className="skip-link">
         Pular para o conteúdo
       </a>
-
       <Navbar />
-
       <main id="main">
         <Hero />
         <Marquee />
@@ -26,7 +24,6 @@ export default function Home() {
         <Faq />
         <CtaBand />
       </main>
-
       <Footer />
       <WhatsAppFab />
     </>
