@@ -1,5 +1,5 @@
 export const WHATSAPP_URL =
-  "https://wa.me/5585323899240?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento.";
+  "https://wa.me/558532389240?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento.";
 export const INSTAGRAM_URL = "https://www.instagram.com/copygrafgraficadigital/";
 export const LINKTREE_URL  = "https://linktr.ee/copygrafoficial";
 export const PHONE_HREF    = "tel:+558532389240";

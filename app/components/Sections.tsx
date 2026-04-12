@@ -31,8 +31,8 @@ export function Process() {
   const ref = useReveal() as React.RefObject<HTMLElement>;
   return (
     <section id="processo" ref={ref} aria-labelledby="proc-title"
-      className="py-20 bg-white border-y border-[var(--border)]">
-      <div className="max-w-[1200px] mx-auto px-6">
+      className="py-16 sm:py-20 bg-white border-y border-[var(--border)]">
+      <div className="max-w-[1200px] mx-auto px-5 sm:px-6">
         <div className="mb-12 opacity-0-init anim-fade-up">
           <p className="text-xs font-semibold uppercase tracking-widest mb-2"
             style={{ color: "var(--blue)", fontFamily: "var(--font-mono)" }}>
@@ -69,8 +69,8 @@ export function Process() {
 export function Portfolio() {
   const ref = useReveal() as React.RefObject<HTMLElement>;
   return (
-    <section id="portfolio" ref={ref} aria-labelledby="port-title" className="py-20 bg-[var(--bg)]">
-      <div className="max-w-[1200px] mx-auto px-6">
+    <section id="portfolio" ref={ref} aria-labelledby="port-title" className="py-16 sm:py-20 bg-[var(--bg)]">
+      <div className="max-w-[1200px] mx-auto px-5 sm:px-6">
         <div className="opacity-0-init anim-fade-up mb-10">
           <p className="text-xs font-semibold uppercase tracking-widest mb-2"
             style={{ color: "var(--blue)", fontFamily: "var(--font-mono)" }}>
@@ -137,8 +137,8 @@ export function Testimonials() {
   const ref = useReveal() as React.RefObject<HTMLElement>;
   return (
     <section id="depoimentos" ref={ref} aria-labelledby="dep-title"
-      className="py-20 bg-white border-y border-[var(--border)]">
-      <div className="max-w-[1200px] mx-auto px-6">
+      className="py-16 sm:py-20 bg-white border-y border-[var(--border)]">
+      <div className="max-w-[1200px] mx-auto px-5 sm:px-6">
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10 opacity-0-init anim-fade-up">
           <div>
             <p className="text-xs font-semibold uppercase tracking-widest mb-2"
@@ -200,8 +200,8 @@ export function Faq() {
   const toggle = (id: string) => setOpenId((p) => (p === id ? null : id));
 
   return (
-    <section id="faq" ref={ref} aria-labelledby="faq-title" className="py-20 bg-[var(--bg)]">
-      <div className="max-w-[1200px] mx-auto px-6">
+    <section id="faq" ref={ref} aria-labelledby="faq-title" className="py-16 sm:py-20 bg-[var(--bg)]">
+      <div className="max-w-[1200px] mx-auto px-5 sm:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-10 lg:gap-16">
           <div className="opacity-0-init anim-slide-left">
             <p className="text-xs font-semibold uppercase tracking-widest mb-2"
@@ -283,8 +283,8 @@ export function Marquee() {
 /* ── CTA Band ── */
 export function CtaBand() {
   return (
-    <section id="cta" aria-labelledby="cta-title" className="py-20 bg-white border-t border-[var(--border)]">
-      <div className="max-w-[1200px] mx-auto px-6">
+    <section id="cta" aria-labelledby="cta-title" className="py-16 sm:py-20 bg-white border-t border-[var(--border)]">
+      <div className="max-w-[1200px] mx-auto px-5 sm:px-6">
         <div className="relative rounded-2xl overflow-hidden px-6 sm:px-10 py-12 sm:py-16 text-center bg-[var(--blue)]">
           <div className="absolute inset-0 pointer-events-none opacity-10" aria-hidden="true">
             <div className="absolute top-0 right-0 w-72 h-72 rounded-full"
@@ -332,7 +332,7 @@ const NAV_LINKS_F = [
 export function Footer() {
   return (
     <footer role="contentinfo" className="border-t pt-14 pb-8 bg-[var(--bg)] border-[var(--border)]">
-      <div className="max-w-[1200px] mx-auto px-6">
+      <div className="max-w-[1200px] mx-auto px-5 sm:px-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1.5fr] gap-8 mb-10">
           <div>
             <Image src="/logo-copygraf.png" alt="Copygraf" width={140} height={70}
@@ -422,7 +422,7 @@ export function Footer() {
 /* ── WhatsApp FAB ── */
 export function WhatsAppFab() {
   return (
-    <a href="https://wa.me/5585323899240?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento."
+    <a href="https://wa.me/558532389240?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento."
       target="_blank" rel="noopener noreferrer"
       aria-label="Falar com a Copygraf no WhatsApp"
       className="fixed bottom-6 right-6 z-[200] w-14 h-14 rounded-full flex items-center justify-center transition-transform duration-200 hover:scale-110 active:scale-95"
