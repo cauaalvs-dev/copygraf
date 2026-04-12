@@ -2,10 +2,13 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { STEPS, TESTIMONIALS, FAQ_ITEMS, WHATSAPP_URL, INSTAGRAM_URL, LINKTREE_URL, PHONE_HREF, PHONE_DISPLAY, ADDRESS } from "@/app/lib/constants";
-import { Star, Plus, Minus, MapPin, Phone, Clock, ArrowRight, ArrowUpRight } from "lucide-react";
+import {
+  STEPS, TESTIMONIALS, FAQ_ITEMS,
+  WHATSAPP_URL, INSTAGRAM_URL, LINKTREE_URL,
+  PHONE_HREF, PHONE_DISPLAY, ADDRESS,
+} from "@/app/lib/constants";
+import { Star, Plus, Minus, MapPin, Phone, Clock, ArrowRight, ArrowUpRight, ExternalLink } from "lucide-react";
 
-/* ── util ── */
 function useReveal() {
   const ref = useRef<HTMLElement>(null);
   useEffect(() => {
@@ -15,7 +18,7 @@ function useReveal() {
       (entries) => entries.forEach((e) => {
         if (e.isIntersecting) { (e.target as HTMLElement).style.opacity = "1"; io.unobserve(e.target); }
       }),
-      { threshold: 0.08 }
+      { threshold: 0.06 }
     );
     items.forEach((el) => io.observe(el));
     return () => io.disconnect();
@@ -31,24 +34,29 @@ export function Process() {
       className="py-20 bg-white border-y border-[var(--border)]">
       <div className="max-w-[1200px] mx-auto px-6">
         <div className="mb-12 opacity-0-init anim-fade-up">
-          <div className="section-label mb-3">Como Funciona</div>
-          <h2 id="proc-title" className="font-extrabold tracking-tight text-[var(--text)]"
-            style={{ fontSize: "clamp(1.75rem, 4vw, 2.5rem)" }}>
+          <p className="text-xs font-semibold uppercase tracking-widest mb-2"
+            style={{ color: "var(--blue)", fontFamily: "var(--font-mono)" }}>
+            Como Funciona
+          </p>
+          <h2 id="proc-title" className="font-extrabold tracking-tight"
+            style={{ fontSize: "clamp(1.75rem,4vw,2.5rem)", color: "var(--text)" }}>
             Do briefing à entrega
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0" role="list">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-[var(--border)] rounded-2xl overflow-hidden" role="list">
           {STEPS.map((step, i) => (
             <div key={step.number}
-              className={`relative p-6 border-r last:border-r-0 border-[var(--border)] opacity-0-init anim-fade-up anim-delay-${i + 1}`}
+              className={`bg-white p-7 opacity-0-init anim-fade-up anim-delay-${i + 1}`}
               role="listitem">
-              <div className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold text-white bg-[var(--blue)] mb-5 shadow-md shadow-blue-100"
+              <div
+                className="w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold text-white mb-5"
+                style={{ background: "var(--blue)" }}
                 aria-hidden="true">
                 {i + 1}
               </div>
-              <h3 className="font-bold text-base mb-2 text-[var(--text)]">{step.title}</h3>
-              <p className="text-sm leading-relaxed text-[var(--muted)]">{step.description}</p>
+              <h3 className="font-bold text-base mb-2" style={{ color: "var(--text)" }}>{step.title}</h3>
+              <p className="text-sm leading-relaxed" style={{ color: "var(--muted)" }}>{step.description}</p>
             </div>
           ))}
         </div>
@@ -57,57 +65,67 @@ export function Process() {
   );
 }
 
-/* ── Portfolio ── */
-const PORT_ITEMS = [
-  { label: "Fachadas em ACM",    sub: "Comunicação Visual",    accent: "#1a56db", bg: "#ebf0fd" },
-  { label: "Letras Caixa",       sub: "Sinalização 3D",        accent: "#0891b2", bg: "#ecfeff" },
-  { label: "Impressão UV",       sub: "Digital Premium",       accent: "#7c3aed", bg: "#f5f3ff" },
-  { label: "Banners & Lonas",    sub: "Grande Formato",        accent: "#dc2626", bg: "#fef2f2" },
-  { label: "Uniformes",          sub: "Vestuário Corporativo", accent: "#d97706", bg: "#fffbeb" },
-  { label: "Papelaria",          sub: "Identidade Visual",     accent: "#059669", bg: "#f0fdf4" },
-];
-
+/* ── Portfolio — Instagram CTA ── */
 export function Portfolio() {
   const ref = useReveal() as React.RefObject<HTMLElement>;
   return (
     <section id="portfolio" ref={ref} aria-labelledby="port-title" className="py-20 bg-[var(--bg)]">
       <div className="max-w-[1200px] mx-auto px-6">
-        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10 opacity-0-init anim-fade-up">
-          <div>
-            <div className="section-label mb-3">Portfólio</div>
-            <h2 id="port-title" className="font-extrabold tracking-tight text-[var(--text)]"
-              style={{ fontSize: "clamp(1.75rem, 4vw, 2.5rem)" }}>
-              Nossos trabalhos
-            </h2>
-          </div>
-          <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer"
-            aria-label="Ver portfólio completo no Instagram"
-            className="inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--muted)] hover:text-[var(--blue)] transition-colors shrink-0">
-            Ver no Instagram <ArrowUpRight size={15} strokeWidth={2} aria-hidden="true" />
-          </a>
+        <div className="opacity-0-init anim-fade-up mb-10">
+          <p className="text-xs font-semibold uppercase tracking-widest mb-2"
+            style={{ color: "var(--blue)", fontFamily: "var(--font-mono)" }}>
+            Portfólio
+          </p>
+          <h2 id="port-title" className="font-extrabold tracking-tight"
+            style={{ fontSize: "clamp(1.75rem,4vw,2.5rem)", color: "var(--text)" }}>
+            Nossos trabalhos
+          </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" aria-label="Galeria">
-          {PORT_ITEMS.map((item, i) => (
-            <div key={item.label}
-              className={`group relative rounded-2xl overflow-hidden h-44 flex items-end p-5 cursor-default transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg opacity-0-init anim-fade-up anim-delay-${Math.min(i + 1, 6)}`}
-              style={{ background: item.bg }}>
-              <div>
-                <p className="text-xs font-bold uppercase tracking-wider mb-1 opacity-70"
-                  style={{ color: item.accent, fontFamily: "var(--font-mono)" }}>{item.sub}</p>
-                <p className="font-extrabold text-lg" style={{ color: item.accent }}>{item.label}</p>
-              </div>
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_320px] lg:grid-cols-[1fr_380px] gap-8 items-start opacity-0-init anim-fade-up anim-delay-1">
+          <div
+            className="rounded-2xl border p-10 flex flex-col items-start gap-6 bg-white"
+            style={{ borderColor: "var(--border)" }}>
+            <div>
+              <p className="font-bold text-xl mb-2" style={{ color: "var(--text)" }}>
+                431 publicações no Instagram
+              </p>
+              <p className="text-sm leading-relaxed" style={{ color: "var(--muted)" }}>
+                Cada foto é um projeto real entregue — fachadas, banners, camisetas, letras caixa e muito mais.
+                Nada de stock. Tudo da Copygraf.
+              </p>
             </div>
-          ))}
-        </div>
+            <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer"
+              aria-label="Ver portfólio no Instagram da Copygraf"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-bold text-white transition-all hover:opacity-90"
+              style={{ background: "linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045)" }}>
+              Ver no Instagram
+              <ExternalLink size={14} strokeWidth={2} aria-hidden="true" />
+            </a>
+          </div>
 
-        <div className="mt-8 text-center opacity-0-init anim-fade-up">
-          <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer"
-            aria-label="Ver portfólio no Instagram"
-            className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl text-sm font-semibold border border-[var(--border)] text-[var(--text)] bg-white hover:border-[var(--blue)] hover:text-[var(--blue)] transition-all duration-150">
-            Ver portfólio completo no Instagram
-            <ArrowUpRight size={14} strokeWidth={2} aria-hidden="true" />
-          </a>
+          <div className="flex flex-col gap-4">
+            {[
+              { label: "Fachadas em ACM",    count: "fachadas",  color: "#1a56db" },
+              { label: "Banners & Lonas",    count: "banners",   color: "#0891b2" },
+              { label: "Camisetas",          count: "uniformes", color: "#059669" },
+              { label: "Papelaria",          count: "impressos", color: "#7c3aed" },
+            ].map((item) => (
+              <a key={item.label} href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer"
+                aria-label={`Ver ${item.label} no Instagram`}
+                className="flex items-center justify-between px-5 py-4 rounded-xl border bg-white transition-all hover:border-[var(--blue)] hover:shadow-sm group"
+                style={{ borderColor: "var(--border)" }}>
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 rounded-full shrink-0" style={{ background: item.color }} aria-hidden="true" />
+                  <span className="text-sm font-semibold" style={{ color: "var(--text)" }}>{item.label}</span>
+                </div>
+                <ArrowUpRight size={14} strokeWidth={2}
+                  className="opacity-40 group-hover:opacity-100 transition-opacity"
+                  style={{ color: "var(--blue)" }}
+                  aria-hidden="true" />
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -123,9 +141,12 @@ export function Testimonials() {
       <div className="max-w-[1200px] mx-auto px-6">
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10 opacity-0-init anim-fade-up">
           <div>
-            <div className="section-label mb-3">Avaliações</div>
-            <h2 id="dep-title" className="font-extrabold tracking-tight text-[var(--text)]"
-              style={{ fontSize: "clamp(1.75rem, 4vw, 2.5rem)" }}>
+            <p className="text-xs font-semibold uppercase tracking-widest mb-2"
+              style={{ color: "var(--blue)", fontFamily: "var(--font-mono)" }}>
+              Avaliações
+            </p>
+            <h2 id="dep-title" className="font-extrabold tracking-tight"
+              style={{ fontSize: "clamp(1.75rem,4vw,2.5rem)", color: "var(--text)" }}>
               O que nossos clientes dizem
             </h2>
           </div>
@@ -134,7 +155,7 @@ export function Testimonials() {
               {[1,2,3,4].map(i => <Star key={i} size={13} fill="#f59e0b" stroke="none" />)}
               <Star size={13} fill="none" stroke="#f59e0b" strokeWidth={1.5} />
             </span>
-            <span className="text-xs text-[var(--muted)]" style={{ fontFamily: "var(--font-mono)" }}>
+            <span className="text-xs" style={{ color: "var(--muted)", fontFamily: "var(--font-mono)" }}>
               4.3 · 338 avaliações Google
             </span>
           </div>
@@ -143,7 +164,8 @@ export function Testimonials() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {TESTIMONIALS.map((t, i) => (
             <article key={t.name}
-              className={`bg-white rounded-2xl border border-[var(--border)] p-6 flex flex-col gap-4 transition-all duration-300 hover:shadow-lg hover:shadow-slate-100 hover:-translate-y-1 opacity-0-init anim-fade-up anim-delay-${i + 1}`}>
+              className={`rounded-2xl border p-6 flex flex-col gap-4 transition-all hover:shadow-md hover:-translate-y-0.5 opacity-0-init anim-fade-up anim-delay-${i + 1}`}
+              style={{ borderColor: "var(--border)", background: "white" }}>
               <div className="flex gap-0.5" aria-label={`${t.rating} de 5 estrelas`}>
                 {Array.from({ length: 5 }).map((_, j) => (
                   <Star key={j} size={14}
@@ -152,15 +174,15 @@ export function Testimonials() {
                     strokeWidth={1.5} aria-hidden="true" />
                 ))}
               </div>
-              <blockquote className="text-sm leading-relaxed flex-1 text-[var(--muted)]">
+              <blockquote className="text-sm leading-relaxed flex-1" style={{ color: "var(--text-2)" }}>
                 &ldquo;{t.text}&rdquo;
               </blockquote>
               <div className="flex items-center gap-3 pt-3 border-t border-[var(--border)]">
                 <div className="w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold text-white bg-[var(--blue)] shrink-0"
                   aria-hidden="true">{t.initials}</div>
                 <div>
-                  <div className="text-sm font-semibold text-[var(--text)]">{t.name}</div>
-                  <div className="text-xs text-[var(--muted)]">{t.role}</div>
+                  <div className="text-sm font-semibold" style={{ color: "var(--text)" }}>{t.name}</div>
+                  <div className="text-xs" style={{ color: "var(--muted)" }}>{t.role}</div>
                 </div>
               </div>
             </article>
@@ -180,20 +202,21 @@ export function Faq() {
   return (
     <section id="faq" ref={ref} aria-labelledby="faq-title" className="py-20 bg-[var(--bg)]">
       <div className="max-w-[1200px] mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-[320px_1fr] gap-12 lg:gap-20">
+        <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-10 lg:gap-16">
           <div className="opacity-0-init anim-slide-left">
-            <div className="section-label mb-3">FAQ</div>
-            <h2 id="faq-title" className="font-extrabold tracking-tight mb-4 text-[var(--text)]"
-              style={{ fontSize: "clamp(1.75rem, 4vw, 2.5rem)" }}>
+            <p className="text-xs font-semibold uppercase tracking-widest mb-2"
+              style={{ color: "var(--blue)", fontFamily: "var(--font-mono)" }}>FAQ</p>
+            <h2 id="faq-title" className="font-extrabold tracking-tight mb-4"
+              style={{ fontSize: "clamp(1.75rem,4vw,2.5rem)", color: "var(--text)" }}>
               Dúvidas frequentes
             </h2>
-            <p className="text-sm leading-relaxed mb-8 text-[var(--muted)]">
-              Não encontrou sua dúvida? Fale com nossa equipe pelo WhatsApp e respondemos em minutos.
+            <p className="text-sm leading-relaxed mb-8" style={{ color: "var(--muted)" }}>
+              Não encontrou? Fale pelo WhatsApp — respondemos em minutos.
             </p>
             <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer"
-              aria-label="Falar com a equipe pelo WhatsApp"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold text-white transition-all hover:-translate-y-0.5 active:translate-y-0"
-              style={{ background: "linear-gradient(135deg, #25d366, #128c4e)", boxShadow: "0 4px 14px rgba(37,211,102,.3)" }}>
+              aria-label="Falar com a equipe Copygraf pelo WhatsApp"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold text-white transition-all hover:opacity-90"
+              style={{ background: "linear-gradient(135deg,#25d366,#128c4e)", boxShadow: "0 4px 14px rgba(37,211,102,.3)" }}>
               Falar pelo WhatsApp
               <ArrowRight size={14} strokeWidth={2.5} aria-hidden="true" />
             </a>
@@ -204,21 +227,24 @@ export function Faq() {
               const isOpen = openId === item.id;
               return (
                 <div key={item.id}
-                  className={`bg-white rounded-2xl overflow-hidden border transition-all duration-200 ${isOpen ? "border-[var(--blue)] shadow-sm shadow-blue-50" : "border-[var(--border)]"}`}
+                  className={`bg-white rounded-2xl overflow-hidden border transition-colors duration-150 ${isOpen ? "border-[var(--blue)]" : "border-[var(--border)]"}`}
                   role="listitem">
                   <button
                     className={`w-full flex items-center justify-between gap-4 px-5 py-4 text-sm font-semibold text-left transition-colors ${isOpen ? "text-[var(--blue)]" : "text-[var(--text)]"}`}
                     aria-expanded={isOpen} aria-controls={item.id}
                     onClick={() => toggle(item.id)}>
                     {item.question}
-                    <span className={`shrink-0 w-6 h-6 rounded-full flex items-center justify-center transition-all duration-200 ${isOpen ? "bg-[var(--blue)] text-white" : "bg-[var(--bg)] text-[var(--muted)]"}`}
+                    <span
+                      className={`shrink-0 w-6 h-6 rounded-full flex items-center justify-center transition-colors ${isOpen ? "bg-[var(--blue)] text-white" : "bg-[var(--bg)] text-[var(--muted)]"}`}
                       aria-hidden="true">
                       {isOpen ? <Minus size={12} strokeWidth={2.5} /> : <Plus size={12} strokeWidth={2.5} />}
                     </span>
                   </button>
                   <div id={item.id} role="region"
                     style={{ maxHeight: isOpen ? 200 : 0, overflow: "hidden", transition: "max-height .3s cubic-bezier(.4,0,.2,1)" }}>
-                    <p className="px-5 pb-5 text-sm leading-relaxed text-[var(--muted)]">{item.answer}</p>
+                    <p className="px-5 pb-5 text-sm leading-relaxed" style={{ color: "var(--muted)" }}>
+                      {item.answer}
+                    </p>
                   </div>
                 </div>
               );
@@ -238,15 +264,15 @@ export function Marquee() {
   return (
     <div className="relative overflow-hidden py-3.5 bg-[var(--blue-lt)] border-y border-blue-100" aria-hidden="true">
       <div className="absolute inset-y-0 left-0 w-12 z-10 pointer-events-none"
-        style={{ background: "linear-gradient(90deg, var(--blue-lt), transparent)" }} />
+        style={{ background: "linear-gradient(90deg,var(--blue-lt),transparent)" }} />
       <div className="absolute inset-y-0 right-0 w-12 z-10 pointer-events-none"
-        style={{ background: "linear-gradient(-90deg, var(--blue-lt), transparent)" }} />
+        style={{ background: "linear-gradient(-90deg,var(--blue-lt),transparent)" }} />
       <div className="flex gap-10 items-center w-max marquee-track">
         {doubled.map((item, i) => (
-          <span key={i} className="flex items-center gap-4 shrink-0 text-xs font-bold uppercase tracking-widest text-[var(--blue)]"
+          <span key={i}
+            className="flex items-center gap-4 shrink-0 text-xs font-bold uppercase tracking-wider text-[var(--blue)]"
             style={{ fontFamily: "var(--font-mono)" }}>
-            {item}
-            <span className="text-blue-300" aria-hidden="true">·</span>
+            {item}<span className="text-blue-300">·</span>
           </span>
         ))}
       </div>
@@ -259,30 +285,30 @@ export function CtaBand() {
   return (
     <section id="cta" aria-labelledby="cta-title" className="py-20 bg-white border-t border-[var(--border)]">
       <div className="max-w-[1200px] mx-auto px-6">
-        <div className="relative rounded-2xl overflow-hidden px-10 py-16 text-center bg-[var(--blue)]">
-          <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-            <div className="absolute top-0 right-0 w-72 h-72 rounded-full opacity-10"
-              style={{ background: "radial-gradient(circle, #fff, transparent)", transform: "translate(30%, -30%)" }} />
-            <div className="absolute bottom-0 left-0 w-56 h-56 rounded-full opacity-10"
-              style={{ background: "radial-gradient(circle, #06b6d4, transparent)", transform: "translate(-30%, 30%)" }} />
+        <div className="relative rounded-2xl overflow-hidden px-6 sm:px-10 py-12 sm:py-16 text-center bg-[var(--blue)]">
+          <div className="absolute inset-0 pointer-events-none opacity-10" aria-hidden="true">
+            <div className="absolute top-0 right-0 w-72 h-72 rounded-full"
+              style={{ background: "radial-gradient(circle,#fff,transparent)", transform: "translate(30%,-30%)" }} />
+            <div className="absolute bottom-0 left-0 w-56 h-56 rounded-full"
+              style={{ background: "radial-gradient(circle,#06b6d4,transparent)", transform: "translate(-30%,30%)" }} />
           </div>
           <h2 id="cta-title" className="relative font-extrabold text-white mb-3 tracking-tight"
-            style={{ fontSize: "clamp(1.75rem, 4vw, 2.5rem)" }}>
+            style={{ fontSize: "clamp(1.75rem,4vw,2.5rem)" }}>
             Pronto para começar?
           </h2>
           <p className="relative text-sm text-blue-100 mb-8 mx-auto max-w-[420px] leading-relaxed">
-            Solicite um orçamento grátis e receba uma resposta em até 24h. Sem compromisso.
+            Orçamento gratuito em até 24h. Sem compromisso.
           </p>
           <div className="relative flex flex-wrap justify-center gap-3">
             <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer"
               aria-label="Solicitar orçamento via WhatsApp"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl text-sm font-bold transition-all hover:-translate-y-0.5 active:translate-y-0"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl text-sm font-bold transition-all hover:opacity-90"
               style={{ background: "#fff", color: "var(--blue)" }}>
               Solicitar Orçamento via WhatsApp
               <ArrowRight size={15} strokeWidth={2.5} aria-hidden="true" />
             </a>
             <a href={PHONE_HREF} aria-label="Ligar para a Copygraf"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl text-sm font-bold text-white transition-all hover:-translate-y-0.5 active:translate-y-0"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl text-sm font-bold text-white transition-all hover:opacity-90"
               style={{ background: "rgba(255,255,255,.15)", border: "1px solid rgba(255,255,255,.25)" }}>
               {PHONE_DISPLAY}
             </a>
@@ -295,24 +321,25 @@ export function CtaBand() {
 
 /* ── Footer ── */
 const SVC_LINKS = ["Fachadas em ACM","Letras Caixa","Impressão UV","Banners & Lonas","Camisetas & Uniformes","Papelaria Corporativa"];
-const NAV_LINKS_FOOTER = [
+const NAV_LINKS_F = [
   { href: "#processo",    label: "Como Funciona",  external: false },
-  { href: "#portfolio",   label: "Portfólio",      external: false },
-  { href: "#depoimentos", label: "Avaliações",      external: false },
-  { href: "#faq",         label: "FAQ",             external: false },
-  { href: INSTAGRAM_URL,  label: "Instagram",       external: true },
+  { href: "#portfolio",   label: "Portfólio",       external: false },
+  { href: "#depoimentos", label: "Avaliações",       external: false },
+  { href: "#faq",         label: "FAQ",              external: false },
+  { href: INSTAGRAM_URL,  label: "Instagram",        external: true },
 ];
 
 export function Footer() {
   return (
     <footer role="contentinfo" className="border-t pt-14 pb-8 bg-[var(--bg)] border-[var(--border)]">
       <div className="max-w-[1200px] mx-auto px-6">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1.5fr] gap-10 mb-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1.5fr] gap-8 mb-10">
           <div>
             <Image src="/logo-copygraf.png" alt="Copygraf" width={140} height={70}
               className="h-12 w-auto object-contain mb-4" />
-            <p className="text-sm leading-relaxed mb-5 max-w-[240px] text-[var(--muted)]">
-              Gráfica Digital &amp; Papelaria em Caucaia, CE. Desde 2004 transformando ideias em comunicação visual.
+            <p className="text-sm leading-relaxed mb-5 max-w-[240px]" style={{ color: "var(--muted)" }}>
+              Gráfica Digital &amp; Papelaria em Caucaia, CE.
+              Desde 2004 transformando ideias em comunicação visual.
             </p>
             <div className="flex gap-2" aria-label="Redes sociais">
               {[
@@ -321,8 +348,8 @@ export function Footer() {
                 { href: LINKTREE_URL,  label: "Linktree",  text: "LT" },
               ].map(({ href, label, text }) => (
                 <a key={text} href={href} target="_blank" rel="noopener noreferrer" aria-label={label}
-                  className="w-9 h-9 rounded-xl border border-[var(--border)] flex items-center justify-center text-xs font-bold text-[var(--muted)] bg-white hover:border-[var(--blue)] hover:text-[var(--blue)] transition-all duration-150"
-                  style={{ fontFamily: "var(--font-mono)" }}>
+                  className="w-9 h-9 rounded-xl border flex items-center justify-center text-xs font-bold bg-white transition-all hover:border-[var(--blue)] hover:text-[var(--blue)]"
+                  style={{ borderColor: "var(--border)", color: "var(--muted)", fontFamily: "var(--font-mono)" }}>
                   {text}
                 </a>
               ))}
@@ -330,56 +357,60 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-bold mb-4 text-[var(--text)]">Serviços</h3>
+            <h3 className="text-sm font-bold mb-4" style={{ color: "var(--text)" }}>Serviços</h3>
             <ul className="flex flex-col gap-2.5">
               {SVC_LINKS.map((l) => (
                 <li key={l}>
-                  <a href="#servicos" className="text-sm text-[var(--muted)] hover:text-[var(--blue)] transition-colors">{l}</a>
+                  <a href="#servicos" className="text-sm transition-colors hover:text-[var(--blue)]"
+                    style={{ color: "var(--muted)" }}>{l}</a>
                 </li>
               ))}
             </ul>
           </div>
 
           <div>
-            <h3 className="text-sm font-bold mb-4 text-[var(--text)]">Navegação</h3>
+            <h3 className="text-sm font-bold mb-4" style={{ color: "var(--text)" }}>Navegação</h3>
             <ul className="flex flex-col gap-2.5">
-              {NAV_LINKS_FOOTER.map(({ href, label, external }) => (
+              {NAV_LINKS_F.map(({ href, label, external }) => (
                 <li key={label}>
                   <a href={href} {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                    className="text-sm text-[var(--muted)] hover:text-[var(--blue)] transition-colors">{label}</a>
+                    className="text-sm transition-colors hover:text-[var(--blue)]"
+                    style={{ color: "var(--muted)" }}>{label}</a>
                 </li>
               ))}
             </ul>
           </div>
 
           <div>
-            <h3 className="text-sm font-bold mb-4 text-[var(--text)]">Contato</h3>
+            <h3 className="text-sm font-bold mb-4" style={{ color: "var(--text)" }}>Contato</h3>
             <address>
-              <div className="flex items-start gap-2.5 mb-3 text-sm text-[var(--muted)]">
+              <div className="flex items-start gap-2.5 mb-3" style={{ color: "var(--muted)" }}>
                 <MapPin size={14} strokeWidth={1.5} className="shrink-0 mt-[3px]" aria-hidden="true" />
-                <span className="leading-relaxed">{ADDRESS}</span>
+                <span className="text-sm leading-relaxed">{ADDRESS}</span>
               </div>
-              <div className="flex items-center gap-2.5 mb-3 text-sm text-[var(--muted)]">
+              <div className="flex items-center gap-2.5 mb-3" style={{ color: "var(--muted)" }}>
                 <Phone size={14} strokeWidth={1.5} aria-hidden="true" />
-                <a href={PHONE_HREF} className="hover:text-[var(--blue)] transition-colors">{PHONE_DISPLAY}</a>
+                <a href={PHONE_HREF} className="text-sm transition-colors hover:text-[var(--blue)]">
+                  {PHONE_DISPLAY}
+                </a>
               </div>
-              <div className="flex items-center gap-2.5 text-sm text-[var(--muted)]">
+              <div className="flex items-center gap-2.5" style={{ color: "var(--muted)" }}>
                 <Clock size={14} strokeWidth={1.5} aria-hidden="true" />
-                <span>Seg–Sex 08h–18h · Sáb 08h–12h</span>
+                <span className="text-sm">Seg–Sex 08h–18h · Sáb 08h–12h</span>
               </div>
             </address>
           </div>
         </div>
 
         <div className="flex flex-wrap items-center justify-between gap-4 pt-6 border-t border-[var(--border)]">
-          <p className="text-xs text-[var(--muted)]" style={{ fontFamily: "var(--font-mono)" }}>
-            <span className="text-[var(--text)]">© 2024 Copygraf Gráfica Digital &amp; Papelaria</span>
+          <p className="text-xs" style={{ color: "var(--muted)", fontFamily: "var(--font-mono)" }}>
+            <span style={{ color: "var(--text-2)" }}>© 2024 Copygraf Gráfica Digital &amp; Papelaria</span>
             &nbsp;·&nbsp;Todos os direitos reservados
           </p>
           <div className="flex gap-2">
             {["DESDE 2004", "4.3★ GOOGLE", "338 AVALIAÇÕES"].map((s) => (
-              <div key={s} className="px-2.5 py-1 rounded-lg border border-[var(--border)] text-[11px] text-[var(--muted)] bg-white"
-                style={{ fontFamily: "var(--font-mono)" }}>{s}</div>
+              <div key={s} className="px-2.5 py-1 rounded-lg border border-[var(--border)] bg-white text-[11px]"
+                style={{ color: "var(--muted)", fontFamily: "var(--font-mono)" }}>{s}</div>
             ))}
           </div>
         </div>

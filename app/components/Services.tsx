@@ -1,18 +1,17 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { SERVICES } from "@/app/lib/constants";
-import type { Service } from "@/app/lib/constants";
-import { LayoutGrid, Type, Printer, Flag, Shirt, FileText } from "lucide-react";
+import { WHATSAPP_URL } from "@/app/lib/constants";
+import { ArrowRight } from "lucide-react";
 
-const ICON_MAP: Record<Service["icon"], React.ReactNode> = {
-  acm:       <LayoutGrid size={22} strokeWidth={1.5} />,
-  letras:    <Type       size={22} strokeWidth={1.5} />,
-  uv:        <Printer    size={22} strokeWidth={1.5} />,
-  banner:    <Flag       size={22} strokeWidth={1.5} />,
-  camiseta:  <Shirt      size={22} strokeWidth={1.5} />,
-  papelaria: <FileText   size={22} strokeWidth={1.5} />,
-};
+const SERVICES = [
+  { name: "Fachadas em ACM",       desc: "Corte a laser · Alta durabilidade · Instalação inclusa",     prazo: "Sob consulta" },
+  { name: "Letras Caixa",          desc: "Acrílico, PVC ou metal · Com ou sem LED · Volume real",       prazo: "Sob consulta" },
+  { name: "Impressão UV",          desc: "Superfícies rígidas · Cores vivas · Resistente a intempéries",prazo: "2–4 dias" },
+  { name: "Banners & Lonas",       desc: "Frontlit · Blackout · Alta resolução · Qualquer tamanho",     prazo: "1–3 dias" },
+  { name: "Camisetas & Uniformes", desc: "Sublimação · Silk-screen · DTF · Qualquer quantidade",       prazo: "3–5 dias" },
+  { name: "Papelaria Corporativa", desc: "Cartões · Flyers · Folders · Verniz localizado",              prazo: "1–2 dias" },
+];
 
 export default function Services() {
   const ref = useRef<HTMLElement>(null);
@@ -22,9 +21,12 @@ export default function Services() {
     if (!items) return;
     const io = new IntersectionObserver(
       (entries) => entries.forEach((e) => {
-        if (e.isIntersecting) { (e.target as HTMLElement).style.opacity = "1"; io.unobserve(e.target); }
+        if (e.isIntersecting) {
+          (e.target as HTMLElement).style.opacity = "1";
+          io.unobserve(e.target);
+        }
       }),
-      { threshold: 0.08 }
+      { threshold: 0.06 }
     );
     items.forEach((el) => io.observe(el));
     return () => io.disconnect();
@@ -33,45 +35,88 @@ export default function Services() {
   return (
     <section id="servicos" ref={ref} aria-labelledby="svc-title" className="py-20 bg-[var(--bg)]">
       <div className="max-w-[1200px] mx-auto px-6">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12 opacity-0-init anim-fade-up">
+
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10 opacity-0-init anim-fade-up">
           <div>
-            <div className="section-label mb-3">Nossos Serviços</div>
-            <h2 id="svc-title" className="font-extrabold tracking-tight text-[var(--text)]"
-              style={{ fontSize: "clamp(1.75rem, 4vw, 2.5rem)" }}>
-              O que oferecemos
+            <p className="text-xs font-semibold uppercase tracking-widest mb-2"
+              style={{ color: "var(--blue)", fontFamily: "var(--font-mono)" }}>
+              Nossos Serviços
+            </p>
+            <h2 id="svc-title" className="font-extrabold tracking-tight"
+              style={{ fontSize: "clamp(1.75rem,4vw,2.5rem)", color: "var(--text)" }}>
+              O que fazemos
             </h2>
           </div>
-          <p className="text-sm text-[var(--muted)] max-w-xs text-right hidden md:block">
-            Do MEI à grande empresa — qualidade premium em cada projeto.
+          <p className="text-sm hidden md:block" style={{ color: "var(--muted)" }}>
+            Prazo estimado após aprovação da arte
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5" role="list">
-          {SERVICES.map((service, i) => (
-            <article
-              key={service.name}
-              className={`svc-card group relative bg-white rounded-2xl border border-[var(--border)] p-7 flex flex-col gap-4 overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-blue-50 hover:-translate-y-1 opacity-0-init anim-fade-up anim-delay-${Math.min(i + 1, 6)}`}
+        {/* Service list */}
+        <div
+          className="rounded-2xl overflow-hidden opacity-0-init anim-fade-up anim-delay-1"
+          style={{ border: "1px solid var(--border)", background: "white" }}
+          role="list"
+        >
+          {SERVICES.map((svc, i) => (
+            <div
+              key={svc.name}
+              className={`group flex items-center gap-3 px-4 sm:px-6 py-4 sm:py-5 transition-colors duration-150 hover:bg-[var(--bg)] ${i < SERVICES.length - 1 ? "border-b border-[var(--border)]" : ""}`}
               role="listitem"
             >
+              {/* Number */}
               <div
-                className="w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300 group-hover:bg-[var(--blue)] group-hover:text-white"
+                className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold shrink-0 transition-colors group-hover:bg-[var(--blue)] group-hover:text-white"
                 style={{ background: "var(--blue-lt)", color: "var(--blue)" }}
                 aria-hidden="true"
               >
-                {ICON_MAP[service.icon]}
+                {String(i + 1).padStart(2, "0")}
               </div>
-              <div>
-                <h3 className="font-bold text-base mb-2 text-[var(--text)]">{service.name}</h3>
-                <p className="text-sm leading-relaxed text-[var(--muted)]">{service.description}</p>
+
+              {/* Name + desc */}
+              <div className="flex-1 min-w-0">
+                <div className="font-semibold text-sm" style={{ color: "var(--text)" }}>
+                  {svc.name}
+                </div>
+                <div className="text-xs mt-0.5" style={{ color: "var(--muted)" }}>
+                  {svc.desc}
+                </div>
               </div>
-              <div className="mt-auto">
-                <span className="inline-block text-xs font-semibold px-2.5 py-1 rounded-lg bg-[var(--bg)] text-[var(--muted)]">
-                  {service.tag}
-                </span>
+
+              {/* Prazo */}
+              <div className="text-right shrink-0 ml-auto">
+                <div className="text-xs" style={{ color: "var(--muted)" }}>Prazo</div>
+                <div className="text-sm font-semibold" style={{ color: "var(--text)" }}>
+                  {svc.prazo}
+                </div>
               </div>
-            </article>
+
+              {/* Arrow */}
+              <ArrowRight
+                size={15}
+                strokeWidth={2}
+                className="shrink-0 opacity-0 group-hover:opacity-100 transition-opacity"
+                style={{ color: "var(--blue)" }}
+                aria-hidden="true"
+              />
+            </div>
           ))}
         </div>
+
+        {/* CTA */}
+        <div className="mt-6 flex flex-col sm:flex-row items-center justify-between gap-4 opacity-0-init anim-fade-up anim-delay-2">
+          <p className="text-sm" style={{ color: "var(--muted)" }}>
+            Não encontrou o que precisa? Consulte nossa equipe.
+          </p>
+          <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer"
+            aria-label="Solicitar orçamento via WhatsApp"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white transition-all hover:opacity-90 shrink-0"
+            style={{ background: "var(--blue)" }}>
+            Solicitar Orçamento
+            <ArrowRight size={14} strokeWidth={2} aria-hidden="true" />
+          </a>
+        </div>
+
       </div>
     </section>
   );
