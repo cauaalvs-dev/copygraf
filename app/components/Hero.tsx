@@ -6,18 +6,7 @@ import { WHATSAPP_URL, PHONE_HREF, PHONE_DISPLAY } from "@/app/lib/constants";
 
 export default function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
-  const bgRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const onScroll = () => {
-      if (!bgRef.current || !sectionRef.current) return;
-      const rect = sectionRef.current.getBoundingClientRect();
-      if (rect.bottom < 0 || rect.top > window.innerHeight) return;
-      bgRef.current.style.transform = `translate3d(0,${-rect.top * 0.4}px,0)`;
-    };
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  
 
   useEffect(() => {
     const items = sectionRef.current?.querySelectorAll<HTMLElement>(".r");
@@ -37,15 +26,14 @@ export default function Hero() {
       id="hero"
       ref={sectionRef}
       aria-label="Apresentação"
-      className="relative border-b border-[var(--border)] overflow-hidden"
+      className="relative border-b border-[var(--border)]"
+      style={{
+        backgroundImage: "url('/hero-bg.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+      data-parallax="true"
     >
-      {/* BG parallax */}
-      <div
-        ref={bgRef}
-        className="absolute inset-x-0 bg-cover bg-center will-change-transform"
-        style={{ backgroundImage: "url('/hero-bg.jpg')", top: "-10%", bottom: "-10%" }}
-        aria-hidden="true"
-      />
       {/* Overlay */}
       <div
         className="absolute inset-0"
