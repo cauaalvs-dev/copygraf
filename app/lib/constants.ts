@@ -10,7 +10,7 @@ export interface Service {
   name: string;
   description: string;
   tag: string;
-  icon: string;
+  icon: "acm" | "letras" | "uv" | "banner" | "camiseta" | "papelaria";
 }
 
 export interface Step {
@@ -36,113 +36,68 @@ export interface FaqItem {
 export const SERVICES: Service[] = [
   {
     name: "Fachadas em ACM",
-    description: "Revestimento em alumínio composto com corte a laser. Alta durabilidade e impacto visual garantido na entrada do seu negócio.",
+    description: "Revestimento em alumínio composto com corte a laser. Alta durabilidade e impacto visual garantido.",
     tag: "Comunicação Visual",
     icon: "acm",
   },
   {
     name: "Letras Caixa",
-    description: "Letras em acrílico, PVC ou metal com ou sem iluminação LED. Identidade visual em volume real com acabamento de alto padrão.",
+    description: "Letras em acrílico, PVC ou metal com ou sem LED. Identidade em volume real com acabamento impecável.",
     tag: "Sinalização 3D",
     icon: "letras",
   },
   {
     name: "Impressão UV",
-    description: "Impressão direta em superfícies rígidas com cores vivas e textura relevo. Resistência total a intempéries e fidelidade de cor.",
+    description: "Impressão direta em superfícies rígidas. Cores vivas, textura relevo e resistência total a intempéries.",
     tag: "Impressão Digital",
     icon: "uv",
   },
   {
     name: "Banners & Lonas",
-    description: "Impressão em lona frontlit e blackout em alta resolução. Eventos corporativos, campanhas e ações externas com qualidade premium.",
+    description: "Lona frontlit e blackout em alta resolução. Do evento corporativo à campanha de rua.",
     tag: "Grande Formato",
     icon: "banner",
   },
   {
     name: "Camisetas & Uniformes",
-    description: "Sublimação, silk-screen e estampa digital. Uniformes corporativos, camisetas de evento e brindes com acabamento profissional.",
+    description: "Sublimação, silk-screen e DTF. Uniformes corporativos e brindes com acabamento profissional.",
     tag: "Vestuário",
     icon: "camiseta",
   },
   {
     name: "Papelaria Corporativa",
-    description: "Cartões de visita, flyers, folders e envelopes. Do design ao acabamento com verniz localizado — identidade visual completa.",
+    description: "Cartões, flyers, folders e envelopes. Do design ao verniz localizado — identidade completa.",
     tag: "Impressão Offset",
     icon: "papelaria",
   },
 ];
 
 export const STEPS: Step[] = [
-  {
-    number: "01",
-    title: "Briefing",
-    description: "Envie o arquivo, referências ou uma ideia. Analisamos e retornamos com orçamento em até 24h.",
-  },
-  {
-    number: "02",
-    title: "Prova de Arte",
-    description: "Prova digital com prova de cor calibrada. Você aprova ou solicita ajustes sem custo adicional.",
-  },
-  {
-    number: "03",
-    title: "Produção",
-    description: "Equipamentos de última geração com mais de 20 anos de experiência. Fidelidade de cor garantida em cada peça.",
-  },
-  {
-    number: "04",
-    title: "Entrega",
-    description: "Retirada no local ou entrega. Instalação com equipe própria para fachadas e comunicação visual externa.",
-  },
+  { number: "01", title: "Briefing",      description: "Envie o arquivo, referências ou uma ideia. Orçamento em até 24h." },
+  { number: "02", title: "Prova de Arte", description: "Prova digital com prova de cor calibrada. Ajustes sem custo." },
+  { number: "03", title: "Produção",      description: "+20 anos de experiência. Fidelidade de cor garantida em cada peça." },
+  { number: "04", title: "Entrega",       description: "Retirada ou entrega. Instalação com equipe própria." },
 ];
 
 export const TESTIMONIALS: Testimonial[] = [
   {
-    initials: "MA",
-    name: "Marcos A.",
-    role: "Empresário · Caucaia-CE",
-    rating: 5,
-    text: "Precisei de banners para uma convenção com prazo curto e a Copygraf entregou antes do combinado. Qualidade impecável e atendimento humanizado.",
+    initials: "MA", name: "Marcos A.", role: "Empresário · Caucaia-CE", rating: 5,
+    text: "Precisei de banners com prazo curto e a Copygraf entregou antes do combinado. Qualidade impecável.",
   },
   {
-    initials: "JS",
-    name: "Juliana S.",
-    role: "Proprietária · Salão de Beleza",
-    rating: 5,
-    text: "Fiz minha fachada em ACM com eles. O resultado superou minhas expectativas — cores exatamente como o arquivo. Instalação muito profissional.",
+    initials: "JS", name: "Juliana S.", role: "Proprietária · Salão de Beleza", rating: 5,
+    text: "Fiz minha fachada em ACM com eles. Cores exatamente como o arquivo. Instalação muito profissional.",
   },
   {
-    initials: "RL",
-    name: "Ricardo L.",
-    role: "Diretor · Empresa de TI",
-    rating: 4,
-    text: "Encomendei 200 camisetas para minha empresa e todos adoraram. Sublimação de qualidade, tecido bom e entrega no prazo combinado.",
+    initials: "RL", name: "Ricardo L.", role: "Diretor · Empresa de TI", rating: 4,
+    text: "200 camisetas e todos adoraram. Sublimação de qualidade, tecido bom e entrega no prazo.",
   },
 ];
 
 export const FAQ_ITEMS: FaqItem[] = [
-  {
-    id: "f1",
-    question: "Qual o prazo médio de entrega?",
-    answer: "Cartões e panfletos saem em 1–2 dias úteis. Banners e lonas em 1–3 dias. Fachadas em ACM e Letras Caixa seguem cronograma acordado no orçamento. Atendemos urgências com serviço expresso.",
-  },
-  {
-    id: "f2",
-    question: "Vocês criam a arte ou preciso enviar pronta?",
-    answer: "Você pode enviar o arquivo fechado (PDF, AI, CDR) ou solicitar a criação. Temos designer próprio que cria e adapta layouts. Criação de arte tem custo adicional informado no orçamento.",
-  },
-  {
-    id: "f3",
-    question: "Qual o formato de arquivo ideal para impressão?",
-    answer: "PDF com sangria de 3mm, cores em CMYK e resolução mínima de 300dpi. Aceitamos AI, CDR e PSD. Para arquivos com fonte, sempre converta para curvas antes de enviar.",
-  },
-  {
-    id: "f4",
-    question: "Fazem instalação de fachadas e comunicação visual?",
-    answer: "Sim. Temos equipe de instalação própria para fachadas em ACM, Letras Caixa e adesivos em geral. Atendemos Caucaia, Fortaleza e região metropolitana. Deslocamento e instalação inclusos no orçamento.",
-  },
-  {
-    id: "f5",
-    question: "Tem quantidade mínima para pedidos?",
-    answer: "Atendemos desde pedidos unitários até tiragens industriais. O preço unitário melhora conforme o volume. Sem quantidade mínima para a maioria dos serviços.",
-  },
+  { id: "f1", question: "Qual o prazo médio de entrega?",                answer: "Cartões e panfletos em 1–2 dias úteis. Banners em 1–3 dias. Fachadas em ACM seguem cronograma. Atendemos urgências com serviço expresso." },
+  { id: "f2", question: "Vocês criam a arte?",                          answer: "Sim. Você pode enviar arquivo fechado (PDF, AI, CDR) ou solicitar criação. Temos designer próprio. Criação tem custo adicional informado no orçamento." },
+  { id: "f3", question: "Qual o formato ideal para impressão?",         answer: "PDF com sangria de 3mm, CMYK e 300dpi mínimo. Aceitamos AI, CDR e PSD. Converta fontes para curvas antes de enviar." },
+  { id: "f4", question: "Fazem instalação?",                            answer: "Sim. Equipe própria para ACM, Letras Caixa e adesivos. Atendemos Caucaia, Fortaleza e região metropolitana. Instalação inclusa no orçamento." },
+  { id: "f5", question: "Tem quantidade mínima?",                       answer: "Sem quantidade mínima para a maioria dos serviços. O preço unitário melhora conforme o volume do pedido." },
 ];
