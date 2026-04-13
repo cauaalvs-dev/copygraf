@@ -47,7 +47,7 @@ export function Process() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 rounded-2xl overflow-hidden" role="list">
           {STEPS.map((step, i) => (
             <div key={step.number}
-              className={`bg-white p-7 anim-fade-up anim-delay-${i + 1}`}
+              className={`p-7 anim-fade-up anim-delay-${i + 1}`}
               role="listitem">
               <div
                 className="w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold text-white mb-5"
@@ -56,7 +56,7 @@ export function Process() {
                 {i + 1}
               </div>
               <h3 className="font-bold text-base mb-2" style={{ color: "#fff" }}>{step.title}</h3>
-              <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.65)" }}>{step.description}</p>
+              <p className="text-sm leading-relaxed text-white/65">{step.description}</p>
             </div>
           ))}
         </div>
@@ -84,13 +84,13 @@ export function Portfolio() {
 
         <div className="grid grid-cols-1 md:grid-cols-[1fr_320px] lg:grid-cols-[1fr_380px] gap-8 items-start anim-fade-up anim-delay-1">
           <div
-            className="rounded-2xl border p-10 flex flex-col items-start gap-6 bg-white"
+            className="rounded-2xl p-10 flex flex-col items-start gap-6"
             style={{ borderColor: "rgba(255,255,255,0.12)" }}>
             <div>
               <p className="font-bold text-xl mb-2" style={{ color: "#fff" }}>
                 431 publicações no Instagram
               </p>
-              <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.65)" }}>
+              <p className="text-sm leading-relaxed text-white/65">
                 Cada foto é um projeto real entregue — fachadas, banners, camisetas, letras caixa e muito mais.
                 Nada de stock. Tudo da Copygraf.
               </p>
@@ -227,7 +227,7 @@ export function Faq() {
               const isOpen = openId === item.id;
               return (
                 <div key={item.id}
-                  className={`bg-white rounded-2xl overflow-hidden border transition-colors duration-150 ${isOpen ? "border-[var(--blue)]" : "border-white/10"}`}
+                  className={`rounded-2xl overflow-hidden border transition-colors duration-150 ${isOpen ? "border-white/40 bg-white/10" : "border-white/10 bg-white/5"}`}
                   role="listitem">
                   <button
                     className={`w-full flex items-center justify-between gap-4 px-5 py-4 text-sm font-semibold text-left transition-colors ${isOpen ? "text-white" : "text-white/80"}`}
@@ -235,7 +235,7 @@ export function Faq() {
                     onClick={() => toggle(item.id)}>
                     {item.question}
                     <span
-                      className={`shrink-0 w-6 h-6 rounded-full flex items-center justify-center transition-colors ${isOpen ? "bg-white text-[#1a56db]" : "bg-white/10 text-white/60"}`}
+                      className={`shrink-0 w-6 h-6 rounded-full flex items-center justify-center transition-colors ${isOpen ? "text-[#1a56db]" : "bg-white/10 text-white/60"}`}
                       aria-hidden="true">
                       {isOpen ? <Minus size={12} strokeWidth={2.5} /> : <Plus size={12} strokeWidth={2.5} />}
                     </span>
@@ -428,7 +428,7 @@ export function Footer() {
           </p>
           <div className="flex gap-2">
             {["DESDE 2004", "4.3★ GOOGLE", "338 AVALIAÇÕES"].map((s) => (
-              <div key={s} className="px-2.5 py-1 rounded-lg border border-white/10 bg-white text-[11px]"
+              <div key={s} className="px-2.5 py-1 rounded-lg border border-white/10 bg-white/5 text-[11px]"
                 style={{ color: "var(--muted)", fontFamily: "var(--font-mono)" }}>{s}</div>
             ))}
           </div>

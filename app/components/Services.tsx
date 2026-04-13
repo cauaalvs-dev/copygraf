@@ -49,7 +49,7 @@ export default function Services() {
 
         <div
           className="rounded-2xl overflow-hidden anim-fade-up anim-delay-1"
-          style={{ border: "1px solid rgba(255,255,255,0.12)", background: "rgba(255,255,255,0.07)" }}
+          style={{ border: "1px solid rgba(255,255,255,0.12)", background: "rgba(255,255,255,0.06)" }}
           role="list"
         >
           {SERVICES.map((svc, i) => (
