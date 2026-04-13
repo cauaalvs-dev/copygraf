@@ -10,54 +10,54 @@
 [![Vercel](https://img.shields.io/badge/Deploy-Vercel-black?style=flat-square&logo=vercel)](https://copygraf.vercel.app)
 [![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
 
-Landing page profissional para a **Copygraf Gráfica Digital & Papelaria**, localizada em Caucaia, CE.  
-Desenvolvida com foco em conversão, agilidade e identidade visual forte.
+Professional landing page for **Copygraf Gráfica Digital & Papelaria**, a print shop based in Caucaia, CE — Brazil.  
+Built for conversion, speed, and strong brand identity.
 
-**[→ Ver site ao vivo](https://copygraf.vercel.app)**
+**[→ Live Site](https://copygraf.vercel.app)**
 
 </div>
 
 ---
 
-## Sobre o Projeto
+## About
 
-A Copygraf é uma gráfica digital em Caucaia, CE, com mais de 20 anos de mercado. Este projeto é a landing page institucional da empresa, desenvolvida para maximizar conversões via WhatsApp e transmitir credibilidade e agilidade ao visitante.
+Copygraf is a digital print shop in Caucaia, CE, with over 20 years in the market. This project is their institutional landing page, designed to maximize WhatsApp conversions and communicate speed and reliability to every visitor.
 
-A copy do site foi construída em torno de um posicionamento direto:
-> *"Esqueceu? A gente resolve. Gráfica rápida de verdade. Precisou pra hoje? Chama."*
+The copy is built around a direct positioning:
+> *"Forgot something? We handle it. Fast printing for real. Need it today? Hit us up."*
 
 ---
 
-## Stack
+## Tech Stack
 
-| Tecnologia | Versão | Uso |
+| Technology | Version | Purpose |
 |---|---|---|
-| Next.js | 14.2 | Framework React com App Router |
-| TypeScript | 5 | Tipagem estática |
-| Tailwind CSS | 3.4 | Estilização utilitária |
-| Lucide React | 0.383 | Ícones |
-| Vercel | — | Deploy e CDN |
+| Next.js | 14.2 | React framework with App Router |
+| TypeScript | 5 | Static typing |
+| Tailwind CSS | 3.4 | Utility-first styling |
+| Lucide React | 0.383 | Icons |
+| Vercel | — | Deploy and CDN |
 
 ---
 
-## Funcionalidades
+## Features
 
-- Hero com parallax CSS nativo e mascote animado
-- Seção de serviços com prazo de entrega por categoria
-- Portfólio com CTA direto para Instagram
-- Avaliações do Google (4.3★ · 338 avaliações)
-- FAQ interativo com accordion
-- CTA band com avatar personalizado do fundador
-- WhatsApp FAB com pulse animation
-- Navbar responsiva com menu mobile fullscreen
-- Marquee animado de serviços
-- Layout totalmente responsivo (mobile-first)
+- Hero section with native CSS parallax and custom mascot
+- Services list with estimated delivery time per category
+- Portfolio section with direct CTA to Instagram
+- Google Reviews display (4.3★ · 338 reviews)
+- Interactive FAQ accordion
+- CTA band with founder's custom avatar
+- WhatsApp FAB with pulse animation
+- Responsive navbar with fullscreen mobile menu
+- Animated services marquee
+- Fully responsive layout (mobile-first)
 
 ---
 
-## Segurança
+## Security
 
-Todos os headers de segurança configurados em `next.config.js`:
+All security headers configured in `next.config.js`:
 
 ```
 X-Frame-Options: DENY
@@ -68,31 +68,31 @@ Permissions-Policy: camera=(), microphone=(), geolocation=()
 Content-Security-Policy: default-src 'self' ...
 ```
 
-Zero formulários, zero API routes, superfície de ataque mínima.  
-Veja [SECURITY.md](SECURITY.md) para detalhes.
+Zero forms, zero API routes, minimal attack surface.  
+See [SECURITY.md](SECURITY.md) for details.
 
 ---
 
-## Estrutura
+## Project Structure
 
 ```
 copygraf/
 ├── app/
 │   ├── components/
-│   │   ├── Navbar.tsx       # Topbar + header responsivo
-│   │   ├── Hero.tsx         # Hero com parallax e mascote
-│   │   ├── Services.tsx     # Lista de serviços com prazos
+│   │   ├── Navbar.tsx       # Topbar + responsive header
+│   │   ├── Hero.tsx         # Hero with parallax and mascot
+│   │   ├── Services.tsx     # Services list with delivery times
 │   │   └── Sections.tsx     # Process, Portfolio, FAQ, CTA, Footer, FAB
 │   ├── lib/
-│   │   └── constants.ts     # Dados e tipos centralizados
-│   ├── globals.css          # Tailwind + animações CSS
-│   ├── layout.tsx           # Metadados + fontes
-│   └── page.tsx             # Composição da página
+│   │   └── constants.ts     # Centralized data and types
+│   ├── globals.css          # Tailwind + CSS animations
+│   ├── layout.tsx           # Metadata + fonts
+│   └── page.tsx             # Page composition
 ├── public/
-│   ├── logo-copygraf.png    # Logo sem fundo
-│   ├── hero-bg.jpg          # Background do hero
-│   ├── avatar-hero.png      # Mascote super-herói
-│   └── avatar-owner.png     # Avatar do fundador (CTA band)
+│   ├── logo-copygraf.png    # Logo without background
+│   ├── hero-bg.jpg          # Hero background image
+│   ├── avatar-hero.png      # Superhero mascot
+│   └── avatar-owner.png     # Founder avatar (CTA band)
 ├── next.config.js           # Security headers
 ├── SECURITY.md
 └── CHANGELOG.md
@@ -100,44 +100,44 @@ copygraf/
 
 ---
 
-## Rodando Localmente
+## Running Locally
 
 ```bash
-# Clone o repositório
+# Clone the repository
 git clone https://github.com/cauaalvs-dev/copygraf.git
 cd copygraf
 
-# Instale as dependências
+# Install dependencies
 npm install
 
-# Rode em desenvolvimento
+# Start development server
 npm run dev
 ```
 
-Acesse [http://localhost:3000](http://localhost:3000).
+Open [http://localhost:3000](http://localhost:3000).
 
 ---
 
 ## Deploy
 
-Deploy automático na Vercel a cada push na branch `main`.
+Auto-deploy on Vercel on every push to `main`.
 
 ```bash
-# Build de produção
+# Production build
 npm run build
 npm start
 ```
 
 ---
 
-## Contato
+## Contact
 
 **Copygraf Gráfica Digital & Papelaria**  
-R. Poebla, 456 — Caucaia, CE  
+R. Poebla, 456 — Caucaia, CE, Brazil  
 [(85) 3238-9240](tel:+558532389240) · [Instagram](https://instagram.com/copygrafgraficadigital) · [WhatsApp](https://wa.me/558532389240)
 
 ---
 
 <div align="center">
-  <sub>Desenvolvido por <a href="https://github.com/cauaalvs-dev">cauaalvs-dev</a> · MIT License</sub>
+  <sub>Built by <a href="https://github.com/cauaalvs-dev">cauaalvs-dev</a> · MIT License</sub>
 </div>
