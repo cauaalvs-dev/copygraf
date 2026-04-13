@@ -75,7 +75,7 @@ export default function Hero() {
 
       {/* ── DESKTOP ── */}
       <div className="relative hidden lg:block max-w-[1200px] mx-auto px-6 pt-12 pb-0">
-        <div className="grid grid-cols-[1fr_320px_280px] gap-8 items-end">
+        <div className="grid grid-cols-[1fr_280px_320px] gap-8 items-end">
 
           {/* LEFT — copy */}
           <div className="pb-16">
@@ -118,6 +118,18 @@ export default function Hero() {
             </div>
           </div>
 
+          {/* RIGHT — superhero avatar, sits at bottom of hero */}
+          <div className="flex items-end justify-center" aria-hidden="true">
+            <Image
+              src="/avatar-hero.png"
+              alt="Mascote Copygraf"
+              width={250}
+              height={380}
+              className="object-contain select-none drop-shadow-2xl"
+              style={{ maxHeight: 380 }}
+              priority
+            />
+          </div>
           {/* MIDDLE — contact card */}
           <div className="pb-16">
             <div className="rounded-2xl p-6"
@@ -151,18 +163,6 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* RIGHT — superhero avatar, sits at bottom of hero */}
-          <div className="flex items-end justify-center" aria-hidden="true">
-            <Image
-              src="/avatar-hero.png"
-              alt="Mascote Copygraf"
-              width={250}
-              height={380}
-              className="object-contain select-none drop-shadow-2xl"
-              style={{ maxHeight: 380 }}
-              priority
-            />
-          </div>
 
         </div>
       </div>
