@@ -33,7 +33,7 @@ export function Process() {
     <section id="processo" ref={ref} aria-labelledby="proc-title"
       className="py-16 sm:py-20 bg-[#1a56db] border-y border-white/10">
       <div className="max-w-[1200px] mx-auto px-5 sm:px-6">
-        <div className="mb-12 opacity-0-init anim-fade-up">
+        <div className="mb-12 anim-fade-up">
           <p className="text-xs font-semibold uppercase tracking-widest mb-2"
             style={{ color: "rgba(255,255,255,0.6)", fontFamily: "var(--font-mono)" }}>
             Como Funciona
@@ -47,7 +47,7 @@ export function Process() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 rounded-2xl overflow-hidden" role="list">
           {STEPS.map((step, i) => (
             <div key={step.number}
-              className={`bg-white p-7 opacity-0-init anim-fade-up anim-delay-${i + 1}`}
+              className={`bg-white p-7 anim-fade-up anim-delay-${i + 1}`}
               role="listitem">
               <div
                 className="w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold text-white mb-5"
@@ -82,7 +82,7 @@ export function Portfolio() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-[1fr_320px] lg:grid-cols-[1fr_380px] gap-8 items-start opacity-0-init anim-fade-up anim-delay-1">
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_320px] lg:grid-cols-[1fr_380px] gap-8 items-start anim-fade-up anim-delay-1">
           <div
             className="rounded-2xl border p-10 flex flex-col items-start gap-6 bg-white"
             style={{ borderColor: "rgba(255,255,255,0.12)" }}>
@@ -139,7 +139,7 @@ export function Testimonials() {
     <section id="depoimentos" ref={ref} aria-labelledby="dep-title"
       className="py-16 sm:py-20 bg-[#1a56db] border-y border-white/10">
       <div className="max-w-[1200px] mx-auto px-5 sm:px-6">
-        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10 opacity-0-init anim-fade-up">
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10 anim-fade-up">
           <div>
             <p className="text-xs font-semibold uppercase tracking-widest mb-2"
               style={{ color: "rgba(255,255,255,0.6)", fontFamily: "var(--font-mono)" }}>
@@ -164,7 +164,7 @@ export function Testimonials() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {TESTIMONIALS.map((t, i) => (
             <article key={t.name}
-              className={`rounded-2xl border p-6 flex flex-col gap-4 transition-all hover:shadow-md hover:-translate-y-0.5 opacity-0-init anim-fade-up anim-delay-${i + 1}`}
+              className={`rounded-2xl border p-6 flex flex-col gap-4 transition-all hover:shadow-md hover:-translate-y-0.5 anim-fade-up anim-delay-${i + 1}`}
               style={{ borderColor: "rgba(255,255,255,0.12)", background: "rgba(255,255,255,0.07)" }}>
               <div className="flex gap-0.5" aria-label={`${t.rating} de 5 estrelas`}>
                 {Array.from({ length: 5 }).map((_, j) => (
@@ -222,7 +222,7 @@ export function Faq() {
             </a>
           </div>
 
-          <div className="flex flex-col gap-2 opacity-0-init anim-slide-right" role="list">
+          <div className="flex flex-col gap-2 anim-slide-right" role="list">
             {FAQ_ITEMS.map((item) => {
               const isOpen = openId === item.id;
               return (

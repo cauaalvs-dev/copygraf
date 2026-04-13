@@ -44,23 +44,23 @@ export default function Hero() {
 
       {/* ── MOBILE layout ── */}
       <div className="relative lg:hidden px-5 pt-8 pb-8">
-        <p className="text-[10px] font-semibold uppercase tracking-wider mb-3 r opacity-0-init anim-fade-up"
+        <p className="text-[10px] font-semibold uppercase tracking-wider mb-3 r anim-fade-up"
           style={{ color: "var(--blue)", fontFamily: "var(--font-mono)" }}>
           Gráfica Digital & Papelaria · Caucaia, CE
         </p>
-        <h1 className="font-extrabold leading-[1.1] tracking-tight mb-3 r opacity-0-init anim-slide-left"
+        <h1 className="font-extrabold leading-[1.1] tracking-tight mb-3 r anim-slide-left"
           style={{ fontSize: "clamp(1.75rem,7vw,2.5rem)", color: "var(--text)" }}>
           Fachada, banner,<br />
           uniforme, papelaria.<br />
           <span style={{ color: "#7dd3fc" }}>Tudo aqui.</span>
         </h1>
-        <p className="text-sm leading-relaxed mb-5 r opacity-0-init anim-fade-up anim-delay-1"
+        <p className="text-sm leading-relaxed mb-5 r anim-fade-up anim-delay-1"
           style={{ color: "rgba(255,255,255,0.7)" }}>
           Em Caucaia há 20 anos. Prazo respeitado e qualidade que você vê na entrega.
         </p>
 
         {/* Trust strip — one line forced */}
-        <div className="flex items-center gap-3 mb-5 r opacity-0-init anim-fade-up anim-delay-2" style={{ flexWrap: "nowrap" }}>
+        <div className="flex items-center gap-3 mb-5 r anim-fade-up anim-delay-2" style={{ flexWrap: "nowrap" }}>
           {["Desde 2004", "Expressa", "Instalação"].map((item, i) => (
             <span key={item} className="flex items-center gap-1 text-[11px] font-medium"
               style={{ color: "var(--muted)", whiteSpace: "nowrap" }}>
@@ -71,7 +71,7 @@ export default function Hero() {
           ))}
         </div>
 
-        <div className="flex flex-col gap-2 r opacity-0-init anim-fade-up anim-delay-3">
+        <div className="flex flex-col gap-2 r anim-fade-up anim-delay-3">
           <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer"
             aria-label="Solicitar orçamento via WhatsApp"
             className="inline-flex items-center justify-center gap-2 w-full py-3 rounded-xl text-sm font-bold text-white"
@@ -90,21 +90,21 @@ export default function Hero() {
       <div className="relative hidden lg:block max-w-[1200px] mx-auto px-6 pt-14 pb-16">
         <div className="grid grid-cols-[1fr_360px] gap-16 items-start">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-wider mb-4 r opacity-0-init anim-fade-up"
+            <p className="text-xs font-semibold uppercase tracking-wider mb-4 r anim-fade-up"
               style={{ color: "rgba(255,255,255,0.7)", fontFamily: "var(--font-mono)" }}>
               Gráfica Digital & Papelaria · Caucaia, CE
             </p>
-            <h1 className="font-extrabold leading-[1.08] tracking-tight mb-5 r opacity-0-init anim-slide-left"
+            <h1 className="font-extrabold leading-[1.08] tracking-tight mb-5 r anim-slide-left"
               style={{ fontSize: "clamp(2.5rem,4vw,4rem)", color: "var(--text)" }}>
               Fachada, banner,<br />uniforme, papelaria.<br />
               <span style={{ color: "#7dd3fc" }}>Tudo aqui.</span>
             </h1>
-            <p className="leading-relaxed mb-7 r opacity-0-init anim-fade-up anim-delay-1"
+            <p className="leading-relaxed mb-7 r anim-fade-up anim-delay-1"
               style={{ fontSize: "1rem", color: "var(--muted)", maxWidth: 480 }}>
               Em Caucaia há 20 anos. Do cartão de visita à fachada completa —
               prazo respeitado e qualidade que você vê na entrega.
             </p>
-            <div className="flex gap-3 mb-7 r opacity-0-init anim-fade-up anim-delay-2">
+            <div className="flex gap-3 mb-7 r anim-fade-up anim-delay-2">
               <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer"
                 aria-label="Orçamento via WhatsApp"
                 className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-sm font-bold text-white hover:opacity-90 transition-opacity"
@@ -117,7 +117,7 @@ export default function Hero() {
                 {PHONE_DISPLAY}
               </a>
             </div>
-            <div className="flex items-center gap-4 r opacity-0-init anim-fade-up anim-delay-3">
+            <div className="flex items-center gap-4 r anim-fade-up anim-delay-3">
               {["Desde 2004", "Entrega expressa", "Instalação inclusa"].map((item, i) => (
                 <span key={item} className="flex items-center gap-1.5 text-xs font-medium whitespace-nowrap"
                   style={{ color: "rgba(255,255,255,0.7)" }}>
@@ -129,7 +129,7 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="r opacity-0-init anim-fade-up anim-delay-1">
+          <div className="r anim-fade-up anim-delay-1">
             <div className="rounded-2xl p-7"
               style={{ background: "rgba(255,255,255,0.1)", backdropFilter: "blur(12px)", border: "1px solid rgba(255,255,255,0.2)", boxShadow: "0 8px 40px rgba(0,0,0,.2)" }}>
               <p className="text-xs font-semibold uppercase tracking-widest mb-1"

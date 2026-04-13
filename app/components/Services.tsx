@@ -36,7 +36,7 @@ export default function Services() {
     <section id="servicos" ref={ref} aria-labelledby="svc-title" className="py-16 sm:py-20 bg-[#1145b7]">
       <div className="max-w-[1200px] mx-auto px-5 sm:px-6">
 
-        <div className="mb-8 sm:mb-10 opacity-0-init anim-fade-up">
+        <div className="mb-8 sm:mb-10 anim-fade-up">
           <p className="text-xs font-semibold uppercase tracking-widest mb-2"
             style={{ color: "rgba(255,255,255,0.6)", fontFamily: "var(--font-mono)" }}>
             Nossos Serviços
@@ -48,7 +48,7 @@ export default function Services() {
         </div>
 
         <div
-          className="rounded-2xl overflow-hidden opacity-0-init anim-fade-up anim-delay-1"
+          className="rounded-2xl overflow-hidden anim-fade-up anim-delay-1"
           style={{ border: "1px solid rgba(255,255,255,0.12)", background: "rgba(255,255,255,0.07)" }}
           role="list"
         >
@@ -85,7 +85,7 @@ export default function Services() {
           ))}
         </div>
 
-        <div className="mt-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 opacity-0-init anim-fade-up anim-delay-2">
+        <div className="mt-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 anim-fade-up anim-delay-2">
           <p className="text-sm" style={{ color: "var(--muted)" }}>
             Não encontrou o que precisa? Consulte nossa equipe.
           </p>
