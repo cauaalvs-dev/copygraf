@@ -33,51 +33,51 @@ export default function Services() {
   }, []);
 
   return (
-    <section id="servicos" ref={ref} aria-labelledby="svc-title" className="py-16 sm:py-20 bg-[var(--bg)]">
+    <section id="servicos" ref={ref} aria-labelledby="svc-title" className="py-16 sm:py-20 bg-[#1145b7]">
       <div className="max-w-[1200px] mx-auto px-5 sm:px-6">
 
         <div className="mb-8 sm:mb-10 opacity-0-init anim-fade-up">
           <p className="text-xs font-semibold uppercase tracking-widest mb-2"
-            style={{ color: "var(--blue)", fontFamily: "var(--font-mono)" }}>
+            style={{ color: "rgba(255,255,255,0.6)", fontFamily: "var(--font-mono)" }}>
             Nossos Serviços
           </p>
           <h2 id="svc-title" className="font-extrabold tracking-tight"
-            style={{ fontSize: "clamp(1.6rem,5vw,2.5rem)", color: "var(--text)" }}>
+            style={{ fontSize: "clamp(1.6rem,5vw,2.5rem)", color: "#fff" }}>
             O que fazemos
           </h2>
         </div>
 
         <div
           className="rounded-2xl overflow-hidden opacity-0-init anim-fade-up anim-delay-1"
-          style={{ border: "1px solid var(--border)", background: "white" }}
+          style={{ border: "1px solid rgba(255,255,255,0.12)", background: "rgba(255,255,255,0.07)" }}
           role="list"
         >
           {SERVICES.map((svc, i) => (
             <div
               key={svc.name}
-              className={`flex items-center gap-3 px-4 sm:px-6 py-4 sm:py-5 transition-colors hover:bg-[var(--bg)] ${i < SERVICES.length - 1 ? "border-b border-[var(--border)]" : ""}`}
+              className={`flex items-center gap-3 px-4 sm:px-6 py-4 sm:py-5 transition-colors hover:bg-white/10 ${i < SERVICES.length - 1 ? "border-b border-white/10" : ""}`}
               role="listitem"
             >
               <div
                 className="w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center text-xs font-bold shrink-0"
-                style={{ background: "var(--blue-lt)", color: "var(--blue)" }}
+                style={{ background: "rgba(255,255,255,0.12)", color: "#fff" }}
                 aria-hidden="true"
               >
                 {String(i + 1).padStart(2, "0")}
               </div>
 
               <div className="flex-1 min-w-0">
-                <div className="font-semibold text-sm" style={{ color: "var(--text)" }}>
+                <div className="font-semibold text-sm" style={{ color: "#fff" }}>
                   {svc.name}
                 </div>
-                <div className="text-xs mt-0.5 truncate" style={{ color: "var(--muted)" }}>
+                <div className="text-xs mt-0.5 truncate" style={{ color: "rgba(255,255,255,0.6)" }}>
                   {svc.desc}
                 </div>
               </div>
 
               <div className="text-right shrink-0 ml-2">
-                <div className="text-xs" style={{ color: "var(--muted)" }}>Prazo</div>
-                <div className="text-xs sm:text-sm font-bold" style={{ color: "var(--text)" }}>
+                <div className="text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>Prazo</div>
+                <div className="text-xs sm:text-sm font-bold" style={{ color: "#fff" }}>
                   {svc.prazo}
                 </div>
               </div>
@@ -92,7 +92,7 @@ export default function Services() {
           <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer"
             aria-label="Solicitar orçamento via WhatsApp"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white transition-all hover:opacity-90 shrink-0"
-            style={{ background: "var(--blue)" }}>
+            style={{ background: "#fff", color: "#1a56db" }}>
             Solicitar Orçamento
             <ArrowRight size={14} strokeWidth={2} aria-hidden="true" />
           </a>

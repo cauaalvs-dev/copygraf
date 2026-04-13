@@ -5,19 +5,19 @@
 :root {
   --blue:    #1a56db;
   --blue-dk: #1145b7;
-  --blue-lt: #ebf0fd;
-  --cyan:    #06b6d4;
+  --blue-lt: rgba(255,255,255,0.08);
+  --cyan:    #60d4f4;
   --green:   #25d366;
   --yellow:  #fbbf24;
-  --text:    #0f172a;
-  --muted:   #64748b;
-  --border:  #e2e8f0;
-  --bg:      #f8fafc;
+  --text:    #ffffff;
+  --muted:   rgba(255,255,255,0.65);
+  --border:  rgba(255,255,255,0.15);
+  --bg:      rgba(255,255,255,0.06);
 }
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { -webkit-font-smoothing: antialiased; overflow-x: hidden; background: #fff; }
+body { -webkit-font-smoothing: antialiased; overflow-x: hidden; background: #1a56db; }
 address { font-style: normal; }
 
 .skip-link {

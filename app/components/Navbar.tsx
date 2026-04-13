@@ -35,7 +35,7 @@ export default function Navbar() {
   return (
     <>
       {/* Topbar */}
-      <div className="hidden lg:block bg-[var(--blue)] border-b border-blue-700">
+      <div className="hidden lg:block bg-[#1145b7] border-b border-[rgba(255,255,255,0.1)]">
         <div className="max-w-[1200px] mx-auto px-6 h-9 flex items-center justify-between text-xs text-blue-100">
           <div className="flex items-center gap-5">
             <span className="flex items-center gap-1.5">
@@ -63,8 +63,8 @@ export default function Navbar() {
 
       {/* Header */}
       <header
-        className={`sticky top-0 z-[100] bg-white transition-all duration-200 ${
-          scrolled ? "shadow-[0_2px_20px_rgba(0,0,0,0.10)]" : "border-b border-[var(--border)]"
+        className={`sticky top-0 z-[100] bg-[#1a56db] transition-all duration-200 ${
+          scrolled ? "shadow-[0_2px_20px_rgba(0,0,0,0.25)]" : "border-b border-[rgba(255,255,255,0.12)]"
         }`}
         role="banner"
       >
@@ -83,7 +83,7 @@ export default function Navbar() {
           <nav aria-label="Navegação principal" className="hidden lg:flex items-center gap-1">
             {NAV_LINKS.map(({ href, label }) => (
               <Link key={href} href={href}
-                className="px-4 py-2 rounded-lg text-sm font-medium text-[var(--muted)] hover:text-[var(--blue)] hover:bg-[var(--blue-lt)] transition-all duration-150">
+                className="px-4 py-2 rounded-lg text-sm font-medium text-white/70 hover:text-white hover:bg-white/10 transition-all duration-150">
                 {label}
               </Link>
             ))}
@@ -91,20 +91,20 @@ export default function Navbar() {
 
           <div className="hidden lg:flex items-center gap-3 shrink-0">
             <a href={PHONE_HREF}
-              className="flex items-center gap-2 text-sm font-semibold text-[var(--text)] hover:text-[var(--blue)] transition-colors"
+              className="flex items-center gap-2 text-sm font-semibold text-white hover:text-white/80 transition-colors"
               aria-label="Ligar">
               <Phone size={15} strokeWidth={2} aria-hidden="true" />
               {PHONE_DISPLAY}
             </a>
             <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer"
-              className="px-5 py-2.5 rounded-lg text-sm font-semibold text-white bg-[var(--blue)] hover:bg-[var(--blue-dk)] transition-colors shadow-sm"
+              className="px-5 py-2.5 rounded-lg text-sm font-semibold text-[#1a56db] bg-white hover:bg-white/90 transition-colors shadow-sm"
               aria-label="Solicitar orçamento">
               Solicitar Orçamento
             </a>
           </div>
 
           <button
-            className="flex lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors ml-auto"
+            className="flex lg:hidden p-2 rounded-lg hover:bg-white/10 transition-colors ml-auto text-white"
             onClick={() => setMenuOpen(true)}
             aria-label="Abrir menu" aria-expanded={menuOpen} aria-controls="mobileNav"
           >
@@ -116,11 +116,11 @@ export default function Navbar() {
       {/* Mobile nav */}
       {menuOpen && (
         <nav id="mobileNav"
-          className="fixed inset-0 z-[99] flex flex-col items-center justify-center gap-5 bg-white"
+          className="fixed inset-0 z-[99] flex flex-col items-center justify-center gap-5 bg-[#1a56db]"
           aria-label="Menu mobile" role="dialog" aria-modal="true"
         >
           <button
-            className="absolute top-5 right-5 w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors"
+            className="absolute top-5 right-5 w-10 h-10 flex items-center justify-center rounded-full hover:bg-white/10 transition-colors text-white"
             onClick={closeMenu} aria-label="Fechar menu"
           >
             <X size={20} />
@@ -129,12 +129,12 @@ export default function Navbar() {
             className="h-12 w-auto object-contain mb-4" />
           {NAV_LINKS.map(({ href, label }) => (
             <Link key={href} href={href} onClick={closeMenu}
-              className="text-xl font-semibold text-[var(--text)] hover:text-[var(--blue)] transition-colors">
+              className="text-xl font-semibold text-white hover:text-white/80 transition-colors">
               {label}
             </Link>
           ))}
           <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" onClick={closeMenu}
-            className="mt-4 px-8 py-3 rounded-lg font-semibold text-white bg-[var(--blue)] hover:bg-[var(--blue-dk)] transition-colors">
+            className="mt-4 px-8 py-3 rounded-lg font-semibold text-[#1a56db] bg-white hover:bg-white/90 transition-colors">
             Solicitar Orçamento
           </a>
         </nav>

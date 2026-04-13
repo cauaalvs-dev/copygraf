@@ -31,20 +31,20 @@ export function Process() {
   const ref = useReveal() as React.RefObject<HTMLElement>;
   return (
     <section id="processo" ref={ref} aria-labelledby="proc-title"
-      className="py-16 sm:py-20 bg-white border-y border-[var(--border)]">
+      className="py-16 sm:py-20 bg-[#1a56db] border-y border-white/10">
       <div className="max-w-[1200px] mx-auto px-5 sm:px-6">
         <div className="mb-12 opacity-0-init anim-fade-up">
           <p className="text-xs font-semibold uppercase tracking-widest mb-2"
-            style={{ color: "var(--blue)", fontFamily: "var(--font-mono)" }}>
+            style={{ color: "rgba(255,255,255,0.6)", fontFamily: "var(--font-mono)" }}>
             Como Funciona
           </p>
           <h2 id="proc-title" className="font-extrabold tracking-tight"
-            style={{ fontSize: "clamp(1.75rem,4vw,2.5rem)", color: "var(--text)" }}>
+            style={{ fontSize: "clamp(1.75rem,4vw,2.5rem)", color: "#fff" }}>
             Do briefing à entrega
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-[var(--border)] rounded-2xl overflow-hidden" role="list">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 rounded-2xl overflow-hidden" role="list">
           {STEPS.map((step, i) => (
             <div key={step.number}
               className={`bg-white p-7 opacity-0-init anim-fade-up anim-delay-${i + 1}`}
@@ -55,8 +55,8 @@ export function Process() {
                 aria-hidden="true">
                 {i + 1}
               </div>
-              <h3 className="font-bold text-base mb-2" style={{ color: "var(--text)" }}>{step.title}</h3>
-              <p className="text-sm leading-relaxed" style={{ color: "var(--muted)" }}>{step.description}</p>
+              <h3 className="font-bold text-base mb-2" style={{ color: "#fff" }}>{step.title}</h3>
+              <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.65)" }}>{step.description}</p>
             </div>
           ))}
         </div>
@@ -69,15 +69,15 @@ export function Process() {
 export function Portfolio() {
   const ref = useReveal() as React.RefObject<HTMLElement>;
   return (
-    <section id="portfolio" ref={ref} aria-labelledby="port-title" className="py-16 sm:py-20 bg-[var(--bg)]">
+    <section id="portfolio" ref={ref} aria-labelledby="port-title" className="py-16 sm:py-20 bg-[#1145b7]">
       <div className="max-w-[1200px] mx-auto px-5 sm:px-6">
         <div className="opacity-0-init anim-fade-up mb-10">
           <p className="text-xs font-semibold uppercase tracking-widest mb-2"
-            style={{ color: "var(--blue)", fontFamily: "var(--font-mono)" }}>
+            style={{ color: "rgba(255,255,255,0.6)", fontFamily: "var(--font-mono)" }}>
             Portfólio
           </p>
           <h2 id="port-title" className="font-extrabold tracking-tight"
-            style={{ fontSize: "clamp(1.75rem,4vw,2.5rem)", color: "var(--text)" }}>
+            style={{ fontSize: "clamp(1.75rem,4vw,2.5rem)", color: "#fff" }}>
             Nossos trabalhos
           </h2>
         </div>
@@ -85,12 +85,12 @@ export function Portfolio() {
         <div className="grid grid-cols-1 md:grid-cols-[1fr_320px] lg:grid-cols-[1fr_380px] gap-8 items-start opacity-0-init anim-fade-up anim-delay-1">
           <div
             className="rounded-2xl border p-10 flex flex-col items-start gap-6 bg-white"
-            style={{ borderColor: "var(--border)" }}>
+            style={{ borderColor: "rgba(255,255,255,0.12)" }}>
             <div>
-              <p className="font-bold text-xl mb-2" style={{ color: "var(--text)" }}>
+              <p className="font-bold text-xl mb-2" style={{ color: "#fff" }}>
                 431 publicações no Instagram
               </p>
-              <p className="text-sm leading-relaxed" style={{ color: "var(--muted)" }}>
+              <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.65)" }}>
                 Cada foto é um projeto real entregue — fachadas, banners, camisetas, letras caixa e muito mais.
                 Nada de stock. Tudo da Copygraf.
               </p>
@@ -113,11 +113,11 @@ export function Portfolio() {
             ].map((item) => (
               <a key={item.label} href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer"
                 aria-label={`Ver ${item.label} no Instagram`}
-                className="flex items-center justify-between px-5 py-4 rounded-xl border bg-white transition-all hover:border-[var(--blue)] hover:shadow-sm group"
-                style={{ borderColor: "var(--border)" }}>
+                className="flex items-center justify-between px-5 py-4 rounded-xl border transition-all hover:bg-white/10 hover:border-white/30 group"
+                style={{ borderColor: "rgba(255,255,255,0.12)" }}>
                 <div className="flex items-center gap-3">
                   <div className="w-2 h-2 rounded-full shrink-0" style={{ background: item.color }} aria-hidden="true" />
-                  <span className="text-sm font-semibold" style={{ color: "var(--text)" }}>{item.label}</span>
+                  <span className="text-sm font-semibold" style={{ color: "#fff" }}>{item.label}</span>
                 </div>
                 <ArrowUpRight size={14} strokeWidth={2}
                   className="opacity-40 group-hover:opacity-100 transition-opacity"
@@ -137,20 +137,20 @@ export function Testimonials() {
   const ref = useReveal() as React.RefObject<HTMLElement>;
   return (
     <section id="depoimentos" ref={ref} aria-labelledby="dep-title"
-      className="py-16 sm:py-20 bg-white border-y border-[var(--border)]">
+      className="py-16 sm:py-20 bg-[#1a56db] border-y border-white/10">
       <div className="max-w-[1200px] mx-auto px-5 sm:px-6">
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10 opacity-0-init anim-fade-up">
           <div>
             <p className="text-xs font-semibold uppercase tracking-widest mb-2"
-              style={{ color: "var(--blue)", fontFamily: "var(--font-mono)" }}>
+              style={{ color: "rgba(255,255,255,0.6)", fontFamily: "var(--font-mono)" }}>
               Avaliações
             </p>
             <h2 id="dep-title" className="font-extrabold tracking-tight"
-              style={{ fontSize: "clamp(1.75rem,4vw,2.5rem)", color: "var(--text)" }}>
+              style={{ fontSize: "clamp(1.75rem,4vw,2.5rem)", color: "#fff" }}>
               O que nossos clientes dizem
             </h2>
           </div>
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl border border-[var(--border)] bg-[var(--bg)] text-sm shrink-0">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl border border-white/10 bg-[var(--bg)] text-sm shrink-0">
             <span className="flex gap-0.5" aria-hidden="true">
               {[1,2,3,4].map(i => <Star key={i} size={13} fill="#f59e0b" stroke="none" />)}
               <Star size={13} fill="none" stroke="#f59e0b" strokeWidth={1.5} />
@@ -165,7 +165,7 @@ export function Testimonials() {
           {TESTIMONIALS.map((t, i) => (
             <article key={t.name}
               className={`rounded-2xl border p-6 flex flex-col gap-4 transition-all hover:shadow-md hover:-translate-y-0.5 opacity-0-init anim-fade-up anim-delay-${i + 1}`}
-              style={{ borderColor: "var(--border)", background: "white" }}>
+              style={{ borderColor: "rgba(255,255,255,0.12)", background: "rgba(255,255,255,0.07)" }}>
               <div className="flex gap-0.5" aria-label={`${t.rating} de 5 estrelas`}>
                 {Array.from({ length: 5 }).map((_, j) => (
                   <Star key={j} size={14}
@@ -174,15 +174,15 @@ export function Testimonials() {
                     strokeWidth={1.5} aria-hidden="true" />
                 ))}
               </div>
-              <blockquote className="text-sm leading-relaxed flex-1" style={{ color: "var(--text-2)" }}>
+              <blockquote className="text-sm leading-relaxed flex-1" style={{ color: "rgba(255,255,255,0.5)" }}>
                 &ldquo;{t.text}&rdquo;
               </blockquote>
-              <div className="flex items-center gap-3 pt-3 border-t border-[var(--border)]">
+              <div className="flex items-center gap-3 pt-3 border-t border-white/10">
                 <div className="w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold text-white bg-[var(--blue)] shrink-0"
                   aria-hidden="true">{t.initials}</div>
                 <div>
-                  <div className="text-sm font-semibold" style={{ color: "var(--text)" }}>{t.name}</div>
-                  <div className="text-xs" style={{ color: "var(--muted)" }}>{t.role}</div>
+                  <div className="text-sm font-semibold" style={{ color: "#fff" }}>{t.name}</div>
+                  <div className="text-xs" style={{ color: "rgba(255,255,255,0.65)" }}>{t.role}</div>
                 </div>
               </div>
             </article>
@@ -200,23 +200,23 @@ export function Faq() {
   const toggle = (id: string) => setOpenId((p) => (p === id ? null : id));
 
   return (
-    <section id="faq" ref={ref} aria-labelledby="faq-title" className="py-16 sm:py-20 bg-[var(--bg)]">
+    <section id="faq" ref={ref} aria-labelledby="faq-title" className="py-16 sm:py-20 bg-[#1145b7]">
       <div className="max-w-[1200px] mx-auto px-5 sm:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-10 lg:gap-16">
           <div className="opacity-0-init anim-slide-left">
             <p className="text-xs font-semibold uppercase tracking-widest mb-2"
-              style={{ color: "var(--blue)", fontFamily: "var(--font-mono)" }}>FAQ</p>
+              style={{ color: "rgba(255,255,255,0.6)", fontFamily: "var(--font-mono)" }}>FAQ</p>
             <h2 id="faq-title" className="font-extrabold tracking-tight mb-4"
-              style={{ fontSize: "clamp(1.75rem,4vw,2.5rem)", color: "var(--text)" }}>
+              style={{ fontSize: "clamp(1.75rem,4vw,2.5rem)", color: "#fff" }}>
               Dúvidas frequentes
             </h2>
-            <p className="text-sm leading-relaxed mb-8" style={{ color: "var(--muted)" }}>
+            <p className="text-sm leading-relaxed mb-8" style={{ color: "rgba(255,255,255,0.65)" }}>
               Não encontrou? Fale pelo WhatsApp — respondemos em minutos.
             </p>
             <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer"
               aria-label="Falar com a equipe Copygraf pelo WhatsApp"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold text-white transition-all hover:opacity-90"
-              style={{ background: "linear-gradient(135deg,#25d366,#128c4e)", boxShadow: "0 4px 14px rgba(37,211,102,.3)" }}>
+              style={{ background: "linear-gradient(135deg,#25d366,#128c4e)", boxShadow: "0 4px 14px rgba(0,0,0,.2)" }}>
               Falar pelo WhatsApp
               <ArrowRight size={14} strokeWidth={2.5} aria-hidden="true" />
             </a>
@@ -227,22 +227,22 @@ export function Faq() {
               const isOpen = openId === item.id;
               return (
                 <div key={item.id}
-                  className={`bg-white rounded-2xl overflow-hidden border transition-colors duration-150 ${isOpen ? "border-[var(--blue)]" : "border-[var(--border)]"}`}
+                  className={`bg-white rounded-2xl overflow-hidden border transition-colors duration-150 ${isOpen ? "border-[var(--blue)]" : "border-white/10"}`}
                   role="listitem">
                   <button
-                    className={`w-full flex items-center justify-between gap-4 px-5 py-4 text-sm font-semibold text-left transition-colors ${isOpen ? "text-[var(--blue)]" : "text-[var(--text)]"}`}
+                    className={`w-full flex items-center justify-between gap-4 px-5 py-4 text-sm font-semibold text-left transition-colors ${isOpen ? "text-white" : "text-white/80"}`}
                     aria-expanded={isOpen} aria-controls={item.id}
                     onClick={() => toggle(item.id)}>
                     {item.question}
                     <span
-                      className={`shrink-0 w-6 h-6 rounded-full flex items-center justify-center transition-colors ${isOpen ? "bg-[var(--blue)] text-white" : "bg-[var(--bg)] text-[var(--muted)]"}`}
+                      className={`shrink-0 w-6 h-6 rounded-full flex items-center justify-center transition-colors ${isOpen ? "bg-white text-[#1a56db]" : "bg-white/10 text-white/60"}`}
                       aria-hidden="true">
                       {isOpen ? <Minus size={12} strokeWidth={2.5} /> : <Plus size={12} strokeWidth={2.5} />}
                     </span>
                   </button>
                   <div id={item.id} role="region"
                     style={{ maxHeight: isOpen ? 200 : 0, overflow: "hidden", transition: "max-height .3s cubic-bezier(.4,0,.2,1)" }}>
-                    <p className="px-5 pb-5 text-sm leading-relaxed" style={{ color: "var(--muted)" }}>
+                    <p className="px-5 pb-5 text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.65)" }}>
                       {item.answer}
                     </p>
                   </div>
@@ -262,15 +262,15 @@ const MARQUEE_ITEMS = ["Fachada em ACM","Letras Caixa","Impressão UV","Banners 
 export function Marquee() {
   const doubled = [...MARQUEE_ITEMS, ...MARQUEE_ITEMS];
   return (
-    <div className="relative overflow-hidden py-3.5 bg-[var(--blue-lt)] border-y border-blue-100" aria-hidden="true">
+    <div className="relative overflow-hidden py-3.5 bg-[#1145b7] border-y border-white/10" aria-hidden="true">
       <div className="absolute inset-y-0 left-0 w-12 z-10 pointer-events-none"
-        style={{ background: "linear-gradient(90deg,var(--blue-lt),transparent)" }} />
+        style={{ background: "linear-gradient(90deg,#1145b7,transparent)" }} />
       <div className="absolute inset-y-0 right-0 w-12 z-10 pointer-events-none"
-        style={{ background: "linear-gradient(-90deg,var(--blue-lt),transparent)" }} />
+        style={{ background: "linear-gradient(-90deg,#1145b7,transparent)" }} />
       <div className="flex gap-10 items-center w-max marquee-track">
         {doubled.map((item, i) => (
           <span key={i}
-            className="flex items-center gap-4 shrink-0 text-xs font-bold uppercase tracking-wider text-[var(--blue)]"
+            className="flex items-center gap-4 shrink-0 text-xs font-bold uppercase tracking-wider text-white/70"
             style={{ fontFamily: "var(--font-mono)" }}>
             {item}<span className="text-blue-300">·</span>
           </span>
@@ -283,35 +283,54 @@ export function Marquee() {
 /* ── CTA Band ── */
 export function CtaBand() {
   return (
-    <section id="cta" aria-labelledby="cta-title" className="py-16 sm:py-20 bg-white border-t border-[var(--border)]">
+    <section id="cta" aria-labelledby="cta-title" className="py-16 sm:py-20 bg-[#1145b7] border-t border-white/10">
       <div className="max-w-[1200px] mx-auto px-5 sm:px-6">
-        <div className="relative rounded-2xl overflow-hidden px-6 sm:px-10 py-12 sm:py-16 text-center bg-[var(--blue)]">
-          <div className="absolute inset-0 pointer-events-none opacity-10" aria-hidden="true">
-            <div className="absolute top-0 right-0 w-72 h-72 rounded-full"
-              style={{ background: "radial-gradient(circle,#fff,transparent)", transform: "translate(30%,-30%)" }} />
-            <div className="absolute bottom-0 left-0 w-56 h-56 rounded-full"
-              style={{ background: "radial-gradient(circle,#06b6d4,transparent)", transform: "translate(-30%,30%)" }} />
-          </div>
-          <h2 id="cta-title" className="relative font-extrabold text-white mb-3 tracking-tight"
-            style={{ fontSize: "clamp(1.75rem,4vw,2.5rem)" }}>
-            Pronto para começar?
-          </h2>
-          <p className="relative text-sm text-blue-100 mb-8 mx-auto max-w-[420px] leading-relaxed">
-            Orçamento gratuito em até 24h. Sem compromisso.
-          </p>
-          <div className="relative flex flex-wrap justify-center gap-3">
-            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer"
-              aria-label="Solicitar orçamento via WhatsApp"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl text-sm font-bold transition-all hover:opacity-90"
-              style={{ background: "#fff", color: "var(--blue)" }}>
-              Solicitar Orçamento via WhatsApp
-              <ArrowRight size={15} strokeWidth={2.5} aria-hidden="true" />
-            </a>
-            <a href={PHONE_HREF} aria-label="Ligar para a Copygraf"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl text-sm font-bold text-white transition-all hover:opacity-90"
-              style={{ background: "rgba(255,255,255,.15)", border: "1px solid rgba(255,255,255,.25)" }}>
-              {PHONE_DISPLAY}
-            </a>
+        <div className="relative rounded-2xl overflow-hidden" style={{ background: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.12)" }}>
+
+          <div className="relative flex flex-col lg:flex-row items-center">
+
+            {/* Avatar */}
+            <div className="shrink-0 flex items-end justify-center pt-8 lg:pt-0 lg:pl-10 lg:self-end">
+              <Image
+                src="/avatar-owner.png"
+                alt="Dono da Copygraf"
+                width={140}
+                height={210}
+                className="object-contain select-none"
+                style={{ maxHeight: 210 }}
+              />
+            </div>
+
+            {/* Text + CTA */}
+            <div className="flex-1 px-6 sm:px-10 py-10 text-center lg:text-left">
+              <div className="hidden lg:inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-full text-xs font-semibold"
+                style={{ background: "rgba(255,255,255,0.1)", color: "rgba(255,255,255,0.8)", border: "1px solid rgba(255,255,255,0.2)" }}>
+                💬 Fale diretamente comigo — respondo pessoalmente.
+              </div>
+              <h2 id="cta-title" className="font-extrabold text-white mb-2 tracking-tight"
+                style={{ fontSize: "clamp(1.5rem,4vw,2.25rem)" }}>
+                Pronto para começar?
+              </h2>
+              <p className="text-sm mb-6 leading-relaxed max-w-sm mx-auto lg:mx-0"
+                style={{ color: "rgba(255,255,255,0.65)" }}>
+                Orçamento gratuito em até 24h. Sem compromisso.
+              </p>
+              <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-3">
+                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer"
+                  aria-label="Solicitar orçamento via WhatsApp"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-sm font-bold transition-all hover:opacity-90"
+                  style={{ background: "#fff", color: "#1a56db" }}>
+                  Solicitar Orçamento via WhatsApp
+                  <ArrowRight size={15} strokeWidth={2.5} aria-hidden="true" />
+                </a>
+                <a href={PHONE_HREF} aria-label="Ligar para a Copygraf"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-sm font-bold text-white transition-all hover:opacity-90"
+                  style={{ background: "rgba(255,255,255,0.12)", border: "1px solid rgba(255,255,255,0.25)" }}>
+                  {PHONE_DISPLAY}
+                </a>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
@@ -331,13 +350,13 @@ const NAV_LINKS_F = [
 
 export function Footer() {
   return (
-    <footer role="contentinfo" className="border-t pt-14 pb-8 bg-[var(--bg)] border-[var(--border)]">
+    <footer role="contentinfo" className="border-t pt-14 pb-8 bg-[var(--bg)] border-white/10">
       <div className="max-w-[1200px] mx-auto px-5 sm:px-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1.5fr] gap-8 mb-10">
           <div>
             <Image src="/logo-copygraf.png" alt="Copygraf" width={140} height={70}
               className="h-12 w-auto object-contain mb-4" />
-            <p className="text-sm leading-relaxed mb-5 max-w-[240px]" style={{ color: "var(--muted)" }}>
+            <p className="text-sm leading-relaxed mb-5 max-w-[240px]" style={{ color: "rgba(255,255,255,0.65)" }}>
               Gráfica Digital &amp; Papelaria em Caucaia, CE.
               Desde 2004 transformando ideias em comunicação visual.
             </p>
@@ -348,8 +367,8 @@ export function Footer() {
                 { href: LINKTREE_URL,  label: "Linktree",  text: "LT" },
               ].map(({ href, label, text }) => (
                 <a key={text} href={href} target="_blank" rel="noopener noreferrer" aria-label={label}
-                  className="w-9 h-9 rounded-xl border flex items-center justify-center text-xs font-bold bg-white transition-all hover:border-[var(--blue)] hover:text-[var(--blue)]"
-                  style={{ borderColor: "var(--border)", color: "var(--muted)", fontFamily: "var(--font-mono)" }}>
+                  className="w-9 h-9 rounded-xl border flex items-center justify-center text-xs font-bold transition-all hover:bg-white/20"
+                  style={{ borderColor: "rgba(255,255,255,0.12)", color: "var(--muted)", fontFamily: "var(--font-mono)" }}>
                   {text}
                 </a>
               ))}
@@ -357,44 +376,44 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-bold mb-4" style={{ color: "var(--text)" }}>Serviços</h3>
+            <h3 className="text-sm font-bold mb-4" style={{ color: "#fff" }}>Serviços</h3>
             <ul className="flex flex-col gap-2.5">
               {SVC_LINKS.map((l) => (
                 <li key={l}>
                   <a href="#servicos" className="text-sm transition-colors hover:text-[var(--blue)]"
-                    style={{ color: "var(--muted)" }}>{l}</a>
+                    style={{ color: "rgba(255,255,255,0.65)" }}>{l}</a>
                 </li>
               ))}
             </ul>
           </div>
 
           <div>
-            <h3 className="text-sm font-bold mb-4" style={{ color: "var(--text)" }}>Navegação</h3>
+            <h3 className="text-sm font-bold mb-4" style={{ color: "#fff" }}>Navegação</h3>
             <ul className="flex flex-col gap-2.5">
               {NAV_LINKS_F.map(({ href, label, external }) => (
                 <li key={label}>
                   <a href={href} {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                     className="text-sm transition-colors hover:text-[var(--blue)]"
-                    style={{ color: "var(--muted)" }}>{label}</a>
+                    style={{ color: "rgba(255,255,255,0.65)" }}>{label}</a>
                 </li>
               ))}
             </ul>
           </div>
 
           <div>
-            <h3 className="text-sm font-bold mb-4" style={{ color: "var(--text)" }}>Contato</h3>
+            <h3 className="text-sm font-bold mb-4" style={{ color: "#fff" }}>Contato</h3>
             <address>
-              <div className="flex items-start gap-2.5 mb-3" style={{ color: "var(--muted)" }}>
+              <div className="flex items-start gap-2.5 mb-3" style={{ color: "rgba(255,255,255,0.65)" }}>
                 <MapPin size={14} strokeWidth={1.5} className="shrink-0 mt-[3px]" aria-hidden="true" />
                 <span className="text-sm leading-relaxed">{ADDRESS}</span>
               </div>
-              <div className="flex items-center gap-2.5 mb-3" style={{ color: "var(--muted)" }}>
+              <div className="flex items-center gap-2.5 mb-3" style={{ color: "rgba(255,255,255,0.65)" }}>
                 <Phone size={14} strokeWidth={1.5} aria-hidden="true" />
                 <a href={PHONE_HREF} className="text-sm transition-colors hover:text-[var(--blue)]">
                   {PHONE_DISPLAY}
                 </a>
               </div>
-              <div className="flex items-center gap-2.5" style={{ color: "var(--muted)" }}>
+              <div className="flex items-center gap-2.5" style={{ color: "rgba(255,255,255,0.65)" }}>
                 <Clock size={14} strokeWidth={1.5} aria-hidden="true" />
                 <span className="text-sm">Seg–Sex 08h–18h · Sáb 08h–12h</span>
               </div>
@@ -402,14 +421,14 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-wrap items-center justify-between gap-4 pt-6 border-t border-[var(--border)]">
+        <div className="flex flex-wrap items-center justify-between gap-4 pt-6 border-t border-white/10">
           <p className="text-xs" style={{ color: "var(--muted)", fontFamily: "var(--font-mono)" }}>
-            <span style={{ color: "var(--text-2)" }}>© 2024 Copygraf Gráfica Digital &amp; Papelaria</span>
+            <span style={{ color: "rgba(255,255,255,0.5)" }}>© 2026 Copygraf Gráfica Digital &amp; Papelaria</span>
             &nbsp;·&nbsp;Todos os direitos reservados
           </p>
           <div className="flex gap-2">
             {["DESDE 2004", "4.3★ GOOGLE", "338 AVALIAÇÕES"].map((s) => (
-              <div key={s} className="px-2.5 py-1 rounded-lg border border-[var(--border)] bg-white text-[11px]"
+              <div key={s} className="px-2.5 py-1 rounded-lg border border-white/10 bg-white text-[11px]"
                 style={{ color: "var(--muted)", fontFamily: "var(--font-mono)" }}>{s}</div>
             ))}
           </div>
