@@ -262,17 +262,17 @@ const MARQUEE_ITEMS = ["Fachada em ACM","Letras Caixa","Impressão UV","Banners 
 export function Marquee() {
   const doubled = [...MARQUEE_ITEMS, ...MARQUEE_ITEMS];
   return (
-    <div className="relative overflow-hidden py-3.5 bg-[#1145b7] border-y border-white/10" aria-hidden="true">
+    <div className="relative overflow-hidden py-3.5 bg-white border-y border-[#dde6fb]" aria-hidden="true">
       <div className="absolute inset-y-0 left-0 w-12 z-10 pointer-events-none"
-        style={{ background: "linear-gradient(90deg,#1145b7,transparent)" }} />
+        style={{ background: "linear-gradient(90deg,#fff,transparent)" }} />
       <div className="absolute inset-y-0 right-0 w-12 z-10 pointer-events-none"
-        style={{ background: "linear-gradient(-90deg,#1145b7,transparent)" }} />
+        style={{ background: "linear-gradient(-90deg,#fff,transparent)" }} />
       <div className="flex gap-10 items-center w-max marquee-track">
         {doubled.map((item, i) => (
           <span key={i}
-            className="flex items-center gap-4 shrink-0 text-xs font-bold uppercase tracking-wider text-white/70"
+            className="flex items-center gap-4 shrink-0 text-xs font-bold uppercase tracking-wider text-[#1a56db]"
             style={{ fontFamily: "var(--font-mono)" }}>
-            {item}<span className="text-blue-300">·</span>
+            {item}<span className="text-[#1a56db]/30">·</span>
           </span>
         ))}
       </div>

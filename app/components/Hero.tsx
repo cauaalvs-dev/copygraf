@@ -50,13 +50,12 @@ export default function Hero() {
         </p>
         <h1 className="font-extrabold leading-[1.1] tracking-tight mb-3 r anim-slide-left"
           style={{ fontSize: "clamp(1.75rem,7vw,2.5rem)", color: "var(--text)" }}>
-          Fachada, banner,<br />
-          uniforme, papelaria.<br />
-          <span style={{ color: "#7dd3fc" }}>Tudo aqui.</span>
+          Precisou pra hoje?<br />
+          <span style={{ color: "#7dd3fc" }}>A gente entrega.</span>
         </h1>
         <p className="text-sm leading-relaxed mb-5 r anim-fade-up anim-delay-1"
           style={{ color: "rgba(255,255,255,0.7)" }}>
-          Em Caucaia há 20 anos. Prazo respeitado e qualidade que você vê na entrega.
+          Gráfica rápida de verdade. Esqueceu? A gente resolve.
         </p>
 
         {/* Trust strip — one line forced */}
@@ -101,8 +100,8 @@ export default function Hero() {
             </h1>
             <p className="leading-relaxed mb-7 r anim-fade-up anim-delay-1"
               style={{ fontSize: "1rem", color: "var(--muted)", maxWidth: 480 }}>
-              Em Caucaia há 20 anos. Do cartão de visita à fachada completa —
-              prazo respeitado e qualidade que você vê na entrega.
+              Fachada, banner, uniforme, papelaria.
+              Em Caucaia há 20 anos — rápido, fiel e sem enrolação.
             </p>
             <div className="flex gap-3 mb-7 r anim-fade-up anim-delay-2">
               <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer"
@@ -118,7 +117,7 @@ export default function Hero() {
               </a>
             </div>
             <div className="flex items-center gap-4 r anim-fade-up anim-delay-3">
-              {["Desde 2004", "Entrega expressa", "Instalação inclusa"].map((item, i) => (
+              {["Desde 2004", "Entrega expressa", "Mesmo dia disponível"].map((item, i) => (
                 <span key={item} className="flex items-center gap-1.5 text-xs font-medium whitespace-nowrap"
                   style={{ color: "rgba(255,255,255,0.7)" }}>
                   {i > 0 && <span className="opacity-30 mr-0.5" aria-hidden="true">·</span>}

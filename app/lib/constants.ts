@@ -36,68 +36,68 @@ export interface FaqItem {
 export const SERVICES: Service[] = [
   {
     name: "Fachadas em ACM",
-    description: "Revestimento em alumínio composto com corte a laser. Alta durabilidade e impacto visual garantido.",
+    description: "Sua empresa merece uma fachada que impressiona. Instalação com equipe própria.",
     tag: "Comunicação Visual",
     icon: "acm",
   },
   {
     name: "Letras Caixa",
-    description: "Letras em acrílico, PVC ou metal com ou sem LED. Identidade em volume real com acabamento impecável.",
+    description: "Com ou sem LED. Volume real, acabamento que faz seu nome brilhar.",
     tag: "Sinalização 3D",
     icon: "letras",
   },
   {
     name: "Impressão UV",
-    description: "Impressão direta em superfícies rígidas. Cores vivas, textura relevo e resistência total a intempéries.",
+    description: "Cores que não desbotam. Direto em acrílico, PVC, madeira e mais.",
     tag: "Impressão Digital",
     icon: "uv",
   },
   {
     name: "Banners & Lonas",
-    description: "Lona frontlit e blackout em alta resolução. Do evento corporativo à campanha de rua.",
+    description: "Evento amanhã? A gente entrega hoje. Alta resolução, qualquer tamanho.",
     tag: "Grande Formato",
     icon: "banner",
   },
   {
     name: "Camisetas & Uniformes",
-    description: "Sublimação, silk-screen e DTF. Uniformes corporativos e brindes com acabamento profissional.",
+    description: "Sublimação, silk e DTF. Do pedido único ao kit corporativo completo.",
     tag: "Vestuário",
     icon: "camiseta",
   },
   {
     name: "Papelaria Corporativa",
-    description: "Cartões, flyers, folders e envelopes. Do design ao verniz localizado — identidade completa.",
+    description: "Cartão, flyer, folder, envelope. Identidade completa do primeiro contato.",
     tag: "Impressão Offset",
     icon: "papelaria",
   },
 ];
 
 export const STEPS: Step[] = [
-  { number: "01", title: "Briefing",      description: "Envie o arquivo, referências ou uma ideia. Orçamento em até 24h." },
-  { number: "02", title: "Prova de Arte", description: "Prova digital com prova de cor calibrada. Ajustes sem custo." },
-  { number: "03", title: "Produção",      description: "+20 anos de experiência. Fidelidade de cor garantida em cada peça." },
-  { number: "04", title: "Entrega",       description: "Retirada ou entrega. Instalação com equipe própria." },
+  { number: "01", title: "Manda o pedido",    description: "Arquivo, referência ou só uma ideia. Orçamento em até 24h — sem enrolação." },
+  { number: "02", title: "Aprovação rápida",  description: "Prova digital na hora. Ajuste o quanto precisar, sem custo extra." },
+  { number: "03", title: "A gente produz",    description: "+20 anos fazendo certo. Cor fiel, acabamento impecável, toda vez." },
+  { number: "04", title: "Entrega ou retira", description: "Você escolhe. Instalação com equipe própria em Caucaia e região." },
 ];
 
 export const TESTIMONIALS: Testimonial[] = [
   {
     initials: "MA", name: "Marcos A.", role: "Empresário · Caucaia-CE", rating: 5,
-    text: "Precisei de banners com prazo curto e a Copygraf entregou antes do combinado. Qualidade impecável.",
+    text: "Precisei de banners pra entregar no mesmo dia. A Copygraf fez e entregou antes do prazo. Não acreditei.",
   },
   {
     initials: "JS", name: "Juliana S.", role: "Proprietária · Salão de Beleza", rating: 5,
-    text: "Fiz minha fachada em ACM com eles. Cores exatamente como o arquivo. Instalação muito profissional.",
+    text: "Fachada em ACM perfeita. Cor exatamente como o arquivo, instalação no dia combinado. Recomendo demais.",
   },
   {
     initials: "RL", name: "Ricardo L.", role: "Diretor · Empresa de TI", rating: 4,
-    text: "200 camisetas e todos adoraram. Sublimação de qualidade, tecido bom e entrega no prazo.",
+    text: "200 camisetas pra evento corporativo. Qualidade ótima, sublimação perfeita e entregaram antes do prazo.",
   },
 ];
 
 export const FAQ_ITEMS: FaqItem[] = [
-  { id: "f1", question: "Qual o prazo médio de entrega?",                answer: "Cartões e panfletos em 1–2 dias úteis. Banners em 1–3 dias. Fachadas em ACM seguem cronograma. Atendemos urgências com serviço expresso." },
-  { id: "f2", question: "Vocês criam a arte?",                          answer: "Sim. Você pode enviar arquivo fechado (PDF, AI, CDR) ou solicitar criação. Temos designer próprio. Criação tem custo adicional informado no orçamento." },
-  { id: "f3", question: "Qual o formato ideal para impressão?",         answer: "PDF com sangria de 3mm, CMYK e 300dpi mínimo. Aceitamos AI, CDR e PSD. Converta fontes para curvas antes de enviar." },
-  { id: "f4", question: "Fazem instalação?",                            answer: "Sim. Equipe própria para ACM, Letras Caixa e adesivos. Atendemos Caucaia, Fortaleza e região metropolitana. Instalação inclusa no orçamento." },
-  { id: "f5", question: "Tem quantidade mínima?",                       answer: "Sem quantidade mínima para a maioria dos serviços. O preço unitário melhora conforme o volume do pedido." },
+  { id: "f1", question: "Preciso pra hoje. Dá?",                      answer: "Na maioria dos casos, sim. Banners e impressos pequenos saem no mesmo dia. Fale pelo WhatsApp e a gente vê o que dá pra fazer." },
+  { id: "f2", question: "Não tenho arquivo. Como faço?",               answer: "A gente cria pra você. Manda uma ideia, referência ou só o nome da empresa. Nosso designer resolve. Criação tem custo adicional informado no orçamento." },
+  { id: "f3", question: "Qual formato devo enviar?",                   answer: "PDF com sangria de 3mm, CMYK e 300dpi. Aceitamos AI, CDR e PSD também. Converta as fontes pra curva antes de mandar." },
+  { id: "f4", question: "Vocês instalam a fachada?",                   answer: "Sim, com equipe própria. Atendemos Caucaia, Fortaleza e região metropolitana. Instalação já inclusa no orçamento." },
+  { id: "f5", question: "Tem quantidade mínima?",                      answer: "Não. Pode pedir uma peça só. O preço por unidade melhora conforme o volume, mas a gente atende qualquer quantidade." },
 ];

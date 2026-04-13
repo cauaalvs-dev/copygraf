@@ -5,12 +5,12 @@ import { WHATSAPP_URL } from "@/app/lib/constants";
 import { ArrowRight } from "lucide-react";
 
 const SERVICES = [
-  { name: "Fachadas em ACM",       desc: "Corte a laser · Alta durabilidade · Instalação inclusa",      prazo: "Sob consulta" },
-  { name: "Letras Caixa",          desc: "Acrílico, PVC ou metal · Com ou sem LED",                     prazo: "Sob consulta" },
-  { name: "Impressão UV",          desc: "Superfícies rígidas · Cores vivas · Resistente",               prazo: "2–4 dias" },
-  { name: "Banners & Lonas",       desc: "Frontlit · Blackout · Alta resolução",                         prazo: "1–3 dias" },
-  { name: "Camisetas & Uniformes", desc: "Sublimação · Silk-screen · DTF",                              prazo: "3–5 dias" },
-  { name: "Papelaria Corporativa", desc: "Cartões · Flyers · Folders · Verniz",                          prazo: "1–2 dias" },
+  { name: "Fachadas em ACM",       desc: "Impressiona quem chega · Instalação própria · Durabilidade total", prazo: "Sob consulta" },
+  { name: "Letras Caixa",          desc: "Com ou sem LED · Acrílico, PVC ou metal · Volume real",        prazo: "Sob consulta" },
+  { name: "Impressão UV",          desc: "Cor que não desbota · Rígido, madeira, acrílico e mais",       prazo: "2–4 dias" },
+  { name: "Banners & Lonas",       desc: "Evento amanhã? Entrega hoje · Alta resolução",                 prazo: "1–3 dias" },
+  { name: "Camisetas & Uniformes", desc: "Sublimação · Silk · DTF · Peça única ou kit completo",        prazo: "3–5 dias" },
+  { name: "Papelaria Corporativa", desc: "Cartão, flyer, folder · Do pedido à entrega em 1–2 dias",     prazo: "1–2 dias" },
 ];
 
 export default function Services() {
