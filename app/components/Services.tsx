@@ -33,7 +33,7 @@ export default function Services() {
   }, []);
 
   return (
-    <section id="servicos" ref={ref} aria-labelledby="svc-title" className="py-16 sm:py-20 bg-[#1145b7]">
+    <section id="servicos" ref={ref} aria-labelledby="svc-title" className="py-16 sm:py-20 bg-[#0d2660]">
       <div className="max-w-[1200px] mx-auto px-5 sm:px-6">
 
         <div className="mb-8 sm:mb-10 anim-fade-up">

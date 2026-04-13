@@ -35,7 +35,7 @@ export default function Navbar() {
   return (
     <>
       {/* Topbar */}
-      <div className="hidden lg:block bg-[#1145b7] border-b border-[rgba(255,255,255,0.1)]">
+      <div className="hidden lg:block bg-[#0d2660] border-b border-[rgba(255,255,255,0.1)]">
         <div className="max-w-[1200px] mx-auto px-6 h-9 flex items-center justify-between text-xs text-blue-100">
           <div className="flex items-center gap-5">
             <span className="flex items-center gap-1.5">
@@ -63,7 +63,7 @@ export default function Navbar() {
 
       {/* Header */}
       <header
-        className={`sticky top-0 z-[100] bg-[#1a56db] transition-all duration-200 ${
+        className={`sticky top-0 z-[100] bg-[#0f2d6b] transition-all duration-200 ${
           scrolled ? "shadow-[0_2px_20px_rgba(0,0,0,0.25)]" : "border-b border-[rgba(255,255,255,0.12)]"
         }`}
         role="banner"
@@ -116,7 +116,7 @@ export default function Navbar() {
       {/* Mobile nav */}
       {menuOpen && (
         <nav id="mobileNav"
-          className="fixed inset-0 z-[99] flex flex-col items-center justify-center gap-5 bg-[#1a56db]"
+          className="fixed inset-0 z-[99] flex flex-col items-center justify-center gap-5 bg-[#0f2d6b]"
           aria-label="Menu mobile" role="dialog" aria-modal="true"
         >
           <button

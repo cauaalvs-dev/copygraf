@@ -13,7 +13,7 @@ export default function Hero() {
       style={{
         backgroundImage: "url('/hero-bg.jpg')",
         backgroundSize: "cover",
-        backgroundPosition: "center 55%",
+        backgroundPosition: "center 30%",
       }}
       data-parallax="true"
     >
