@@ -292,7 +292,7 @@ export function CtaBand() {
             {/* Avatar */}
             <div className="shrink-0 flex items-end justify-center pt-4 lg:pt-0 lg:pl-10 lg:self-end">
               <Image
-                src="/avatar-owner.png"
+                src="/avatar-owner.webp"
                 alt="Dono da Copygraf"
                 width={110}
                 height={165}
@@ -354,7 +354,7 @@ export function Footer() {
       <div className="max-w-[1200px] mx-auto px-5 sm:px-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1.5fr] gap-6 mb-8">
           <div>
-            <Image src="/logo-copygraf.png" alt="Copygraf" width={140} height={70}
+            <Image src="/logo-copygraf.webp" alt="Copygraf" width={140} height={70}
               className="h-12 w-auto object-contain mb-4" />
             <p className="text-sm leading-relaxed mb-5 max-w-[240px]" style={{ color: "rgba(255,255,255,0.65)" }}>
               Gráfica Digital &amp; Papelaria em Caucaia, CE.

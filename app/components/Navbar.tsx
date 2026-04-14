@@ -71,7 +71,7 @@ export default function Navbar() {
         <div className="max-w-[1200px] mx-auto px-6 flex items-center justify-between h-[72px] gap-6">
           <Link href="#hero" aria-label="Copygraf — página inicial" className="shrink-0">
             <Image
-              src="/logo-copygraf.png"
+              src="/logo-copygraf.webp"
               alt="Copygraf Gráfica Digital & Papelaria"
               width={160}
               height={80}
@@ -125,7 +125,7 @@ export default function Navbar() {
           >
             <X size={20} />
           </button>
-          <Image src="/logo-copygraf.png" alt="Copygraf" width={140} height={70}
+          <Image src="/logo-copygraf.webp" alt="Copygraf" width={140} height={70}
             className="h-12 w-auto object-contain mb-4" />
           {NAV_LINKS.map(({ href, label }) => (
             <Link key={href} href={href} onClick={closeMenu}

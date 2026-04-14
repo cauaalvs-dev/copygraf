@@ -117,10 +117,3 @@ address { font-style: normal; }
   background: var(--blue);
   border-radius: 2px;
 }
-
-/* Hero parallax — desktop only (iOS Safari breaks background-attachment: fixed) */
-@media (min-width: 1024px) {
-  [data-parallax="true"] {
-    background-attachment: fixed;
-  }
-}

@@ -1,5 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  compress: true,
+  images: {
+    formats: ["image/webp", "image/avif"],
+    minimumCacheTTL: 31536000,
+  },
   async headers() {
     const CSP = [
       "default-src 'self'",
@@ -23,6 +28,12 @@ const nextConfig = {
           { key: "Strict-Transport-Security", value: "max-age=63072000; includeSubDomains; preload" },
           { key: "Permissions-Policy",        value: "camera=(), microphone=(), geolocation=(), payment=()" },
           { key: "Content-Security-Policy",   value: CSP },
+        ],
+      },
+      {
+        source: "/(.*)\\.(jpg|jpeg|png|webp|avif|svg|ico|woff2)",
+        headers: [
+          { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
         ],
       },
     ];

@@ -15,6 +15,12 @@ const mono = JetBrains_Mono({
   variable: "--font-mono",
 });
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#0f2d6b",
+};
+
 export const metadata: Metadata = {
   title: "Copygraf — Gráfica Digital & Papelaria em Caucaia, CE",
   description:

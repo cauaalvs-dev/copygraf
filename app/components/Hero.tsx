@@ -11,11 +11,10 @@ export default function Hero() {
       aria-label="Apresentação"
       className="relative border-b border-white/10 overflow-hidden"
       style={{
-        backgroundImage: "url('/hero-bg.jpg')",
+        backgroundImage: "url('/hero-bg.webp')",
         backgroundSize: "cover",
         backgroundPosition: "center 30%",
       }}
-      data-parallax="true"
     >
       {/* Overlay */}
       <div
@@ -29,7 +28,7 @@ export default function Hero() {
       <div className="relative lg:hidden px-5 pt-8 pb-8">
         {/* Avatar mobile — top right floating */}
         <div className="absolute top-0 right-0 pointer-events-none" aria-hidden="true">
-          <Image src="/avatar-hero.png" alt="" width={140} height={213}
+          <Image src="/avatar-hero.webp" alt="" width={140} height={213}
             className="object-contain opacity-60" style={{ maxHeight: 213 }} />
         </div>
 
@@ -121,7 +120,7 @@ export default function Hero() {
           {/* RIGHT — superhero avatar, sits at bottom of hero */}
           <div className="flex items-end justify-center" aria-hidden="true">
             <Image
-              src="/avatar-hero.png"
+              src="/avatar-hero.webp"
               alt="Mascote Copygraf"
               width={250}
               height={380}
