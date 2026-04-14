@@ -31,9 +31,9 @@ export function Process() {
   const ref = useReveal() as React.RefObject<HTMLElement>;
   return (
     <section id="processo" ref={ref} aria-labelledby="proc-title"
-      className="py-16 sm:py-20 bg-[#0f2d6b] border-y border-white/10">
+      className="py-10 sm:py-16 bg-[#0f2d6b] border-y border-white/10">
       <div className="max-w-[1200px] mx-auto px-5 sm:px-6">
-        <div className="mb-12 anim-fade-up">
+        <div className="mb-7 anim-fade-up">
           <p className="text-xs font-semibold uppercase tracking-widest mb-2"
             style={{ color: "rgba(255,255,255,0.6)", fontFamily: "var(--font-mono)" }}>
             Como Funciona
@@ -69,9 +69,9 @@ export function Process() {
 export function Portfolio() {
   const ref = useReveal() as React.RefObject<HTMLElement>;
   return (
-    <section id="portfolio" ref={ref} aria-labelledby="port-title" className="py-16 sm:py-20 bg-[#0d2660]">
+    <section id="portfolio" ref={ref} aria-labelledby="port-title" className="py-10 sm:py-16 bg-[#0d2660]">
       <div className="max-w-[1200px] mx-auto px-5 sm:px-6">
-        <div className="opacity-0-init anim-fade-up mb-10">
+        <div className="mb-6">
           <p className="text-xs font-semibold uppercase tracking-widest mb-2"
             style={{ color: "rgba(255,255,255,0.6)", fontFamily: "var(--font-mono)" }}>
             Portfólio
@@ -137,7 +137,7 @@ export function Testimonials() {
   const ref = useReveal() as React.RefObject<HTMLElement>;
   return (
     <section id="depoimentos" ref={ref} aria-labelledby="dep-title"
-      className="py-16 sm:py-20 bg-[#0f2d6b] border-y border-white/10">
+      className="py-10 sm:py-16 bg-[#0f2d6b] border-y border-white/10">
       <div className="max-w-[1200px] mx-auto px-5 sm:px-6">
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10 anim-fade-up">
           <div>
@@ -200,7 +200,7 @@ export function Faq() {
   const toggle = (id: string) => setOpenId((p) => (p === id ? null : id));
 
   return (
-    <section id="faq" ref={ref} aria-labelledby="faq-title" className="py-16 sm:py-20 bg-[#0d2660]">
+    <section id="faq" ref={ref} aria-labelledby="faq-title" className="py-10 sm:py-16 bg-[#0d2660]">
       <div className="max-w-[1200px] mx-auto px-5 sm:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-10 lg:gap-16">
           <div className="opacity-0-init anim-slide-left">
@@ -283,21 +283,21 @@ export function Marquee() {
 /* ── CTA Band ── */
 export function CtaBand() {
   return (
-    <section id="cta" aria-labelledby="cta-title" className="py-16 sm:py-20 bg-[#0d2660] border-t border-white/10">
+    <section id="cta" aria-labelledby="cta-title" className="py-10 sm:py-16 bg-[#0d2660] border-t border-white/10">
       <div className="max-w-[1200px] mx-auto px-5 sm:px-6">
         <div className="relative rounded-2xl overflow-hidden" style={{ background: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.12)" }}>
 
           <div className="relative flex flex-col lg:flex-row items-center">
 
             {/* Avatar */}
-            <div className="shrink-0 flex items-end justify-center pt-8 lg:pt-0 lg:pl-10 lg:self-end">
+            <div className="shrink-0 flex items-end justify-center pt-4 lg:pt-0 lg:pl-10 lg:self-end">
               <Image
                 src="/avatar-owner.png"
                 alt="Dono da Copygraf"
-                width={140}
-                height={210}
-                className="object-contain select-none"
-                style={{ maxHeight: 210 }}
+                width={110}
+                height={165}
+                className="object-contain select-none lg:w-[140px] lg:h-[210px]"
+                style={{ maxHeight: 165 }}
               />
             </div>
 
@@ -350,9 +350,9 @@ const NAV_LINKS_F = [
 
 export function Footer() {
   return (
-    <footer role="contentinfo" className="border-t pt-14 pb-8 bg-[var(--bg)] border-white/10">
+    <footer role="contentinfo" className="border-t pt-8 pb-6 bg-[var(--bg)] border-white/10">
       <div className="max-w-[1200px] mx-auto px-5 sm:px-6">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1.5fr] gap-8 mb-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1.5fr] gap-6 mb-8">
           <div>
             <Image src="/logo-copygraf.png" alt="Copygraf" width={140} height={70}
               className="h-12 w-auto object-contain mb-4" />

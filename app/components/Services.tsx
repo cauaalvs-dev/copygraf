@@ -33,10 +33,10 @@ export default function Services() {
   }, []);
 
   return (
-    <section id="servicos" ref={ref} aria-labelledby="svc-title" className="py-16 sm:py-20 bg-[#0d2660]">
+    <section id="servicos" ref={ref} aria-labelledby="svc-title" className="py-10 sm:py-16 bg-[#0d2660]">
       <div className="max-w-[1200px] mx-auto px-5 sm:px-6">
 
-        <div className="mb-8 sm:mb-10 anim-fade-up">
+        <div className="mb-6 sm:mb-10 anim-fade-up">
           <p className="text-xs font-semibold uppercase tracking-widest mb-2"
             style={{ color: "rgba(255,255,255,0.6)", fontFamily: "var(--font-mono)" }}>
             Nossos Serviços
@@ -70,7 +70,7 @@ export default function Services() {
                 <div className="font-semibold text-sm" style={{ color: "#fff" }}>
                   {svc.name}
                 </div>
-                <div className="text-xs mt-0.5 truncate" style={{ color: "rgba(255,255,255,0.6)" }}>
+                <div className="text-xs mt-0.5 line-clamp-2" style={{ color: "rgba(255,255,255,0.6)" }}>
                   {svc.desc}
                 </div>
               </div>

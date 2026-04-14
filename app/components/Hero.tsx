@@ -30,7 +30,7 @@ export default function Hero() {
         {/* Avatar mobile — top right floating */}
         <div className="absolute top-0 right-0 pointer-events-none" aria-hidden="true">
           <Image src="/avatar-hero.png" alt="" width={140} height={213}
-            className="object-contain opacity-30" style={{ maxHeight: 213 }} />
+            className="object-contain opacity-60" style={{ maxHeight: 213 }} />
         </div>
 
         <p className="text-[10px] font-semibold uppercase tracking-wider mb-3 relative z-10"
