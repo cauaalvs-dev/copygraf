@@ -33,13 +33,7 @@ address { font-style: normal; }
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
 }
-.marquee-track { animation: marquee 30s linear infinite; }
-
-/* Counter animation */
-@keyframes countUp {
-  from { opacity: 0; transform: translateY(12px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
+.marquee-track { animation: marquee 30s linear infinite; will-change: transform; }
 
 /* Slide in from left */
 @keyframes slideLeft {
