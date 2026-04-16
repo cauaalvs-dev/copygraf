@@ -76,7 +76,7 @@ export const STEPS: Step[] = [
   { number: "01", title: "Manda o pedido",    description: "Arquivo, referência ou só uma ideia. Orçamento em até 24h — sem enrolação." },
   { number: "02", title: "Aprovação rápida",  description: "Prova digital na hora. Ajuste o quanto precisar, sem custo extra." },
   { number: "03", title: "A gente produz",    description: "+20 anos fazendo certo. Cor fiel, acabamento impecável, toda vez." },
-  { number: "04", title: "Entrega ou retira", description: "Você escolhe. Instalação com equipe própria em Caucaia e região." },
+  { number: "04", title: "Entrega ou retirada", description: "Você escolhe. Instalação com equipe própria em Caucaia e região." },
 ];
 
 export const TESTIMONIALS: Testimonial[] = [
