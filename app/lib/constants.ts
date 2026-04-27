@@ -1,9 +1,22 @@
-export const WHATSAPP_URL =
-  "https://wa.me/558532389240?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento.";
 export const INSTAGRAM_URL = "https://www.instagram.com/copygrafgraficadigital/";
 export const LINKTREE_URL  = "https://linktr.ee/copygrafoficial";
-export const PHONE_HREF    = "tel:+558532389240";
-export const PHONE_DISPLAY = "(85) 3238-9240";
+
+// Gráfica / Design / Comunicação Visual — WhatsApp
+export const PHONE_GRAFICA_HREF    = "tel:+558585989533";
+export const PHONE_GRAFICA_DISPLAY = "(85) 8598-9533";
+export const WHATSAPP_GRAFICA_URL  =
+  "https://wa.me/558585989533?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20de%20gr%C3%A1fica.";
+
+// Papelaria / Geral — fixo
+export const PHONE_PAPELARIA_HREF    = "tel:+558532389240";
+export const PHONE_PAPELARIA_DISPLAY = "(85) 3238-9240";
+export const WHATSAPP_PAPELARIA_URL  =
+  "https://wa.me/558532389240?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento.";
+
+// Compat — usado no WhatsApp FAB e botões genéricos (aponta para gráfica por padrão)
+export const WHATSAPP_URL  = WHATSAPP_GRAFICA_URL;
+export const PHONE_HREF    = PHONE_GRAFICA_HREF;
+export const PHONE_DISPLAY = PHONE_GRAFICA_DISPLAY;
 export const ADDRESS       = "R. Poebla, 456 — Parque Guadalajara (Jurema), Caucaia — CE, 61650-290";
 
 export interface Service {
@@ -76,7 +89,7 @@ export const STEPS: Step[] = [
   { number: "01", title: "Manda o pedido",    description: "Arquivo, referência ou só uma ideia. Orçamento em até 24h — sem enrolação." },
   { number: "02", title: "Aprovação rápida",  description: "Prova digital na hora. Ajuste o quanto precisar, sem custo extra." },
   { number: "03", title: "A gente produz",    description: "+20 anos fazendo certo. Cor fiel, acabamento impecável, toda vez." },
-  { number: "04", title: "Entrega ou retirada", description: "Você escolhe. Instalação com equipe própria em Caucaia e região." },
+  { number: "04", title: "Entrega ou retira", description: "Você escolhe. Instalação com equipe própria em Caucaia e região." },
 ];
 
 export const TESTIMONIALS: Testimonial[] = [

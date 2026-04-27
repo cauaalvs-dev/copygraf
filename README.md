@@ -10,11 +10,6 @@
 [![Vercel](https://img.shields.io/badge/Deploy-Vercel-black?style=flat-square&logo=vercel)](https://copygraf.vercel.app)
 [![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
 
-[![Performance](https://img.shields.io/badge/Lighthouse-Performance%2095-brightgreen?style=flat-square&logo=lighthouse)](https://copygraf.vercel.app)
-[![Accessibility](https://img.shields.io/badge/Lighthouse-Accessibility%2093-green?style=flat-square&logo=lighthouse)](https://copygraf.vercel.app)
-[![Best Practices](https://img.shields.io/badge/Lighthouse-Best%20Practices%20100-brightgreen?style=flat-square&logo=lighthouse)](https://copygraf.vercel.app)
-[![SEO](https://img.shields.io/badge/Lighthouse-SEO%20100-brightgreen?style=flat-square&logo=lighthouse)](https://copygraf.vercel.app)
-
 Professional landing page for **Copygraf Gráfica Digital & Papelaria**, a print shop based in Caucaia, CE — Brazil.  
 Built for conversion, speed, and strong brand identity.
 

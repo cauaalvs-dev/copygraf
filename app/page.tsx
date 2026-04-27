@@ -1,6 +1,7 @@
 import Navbar from "@/app/components/Navbar";
 import Hero from "@/app/components/Hero";
 import Services from "@/app/components/Services";
+import { ContactChannels } from "@/app/components/ContactChannels";
 import {
   Process,
   Portfolio,
@@ -25,6 +26,7 @@ export default function Home() {
         <Portfolio />
         <Testimonials />
         <Faq />
+        <ContactChannels />
         <CtaBand />
       </main>
       <Footer />

@@ -5,6 +5,8 @@ import Image from "next/image";
 import {
   STEPS, TESTIMONIALS, FAQ_ITEMS,
   WHATSAPP_URL, INSTAGRAM_URL, LINKTREE_URL,
+  PHONE_GRAFICA_HREF, PHONE_GRAFICA_DISPLAY,
+  PHONE_PAPELARIA_HREF, PHONE_PAPELARIA_DISPLAY,
   PHONE_HREF, PHONE_DISPLAY, ADDRESS,
 } from "@/app/lib/constants";
 import { Star, Plus, Minus, MapPin, Phone, Clock, ArrowRight, ArrowUpRight, ExternalLink } from "lucide-react";
@@ -407,11 +409,25 @@ export function Footer() {
                 <MapPin size={14} strokeWidth={1.5} className="shrink-0 mt-[3px]" aria-hidden="true" />
                 <span className="text-sm leading-relaxed">{ADDRESS}</span>
               </div>
-              <div className="flex items-center gap-2.5 mb-3" style={{ color: "rgba(255,255,255,0.65)" }}>
-                <Phone size={14} strokeWidth={1.5} aria-hidden="true" />
-                <a href={PHONE_HREF} className="text-sm transition-colors hover:text-[var(--blue)]">
-                  {PHONE_DISPLAY}
-                </a>
+              <div className="flex flex-col gap-2 mb-3">
+                <div className="flex items-center gap-2.5" style={{ color: "rgba(255,255,255,0.65)" }}>
+                  <Phone size={14} strokeWidth={1.5} aria-hidden="true" />
+                  <div className="flex flex-col">
+                    <span className="text-[10px] font-bold tracking-widest uppercase" style={{ color: "#6ea0ff", fontFamily: "var(--font-mono)" }}>Gráfica &amp; Design</span>
+                    <a href={PHONE_GRAFICA_HREF} className="text-sm transition-colors hover:text-[var(--blue)]">
+                      {PHONE_GRAFICA_DISPLAY}
+                    </a>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2.5" style={{ color: "rgba(255,255,255,0.65)" }}>
+                  <Phone size={14} strokeWidth={1.5} aria-hidden="true" />
+                  <div className="flex flex-col">
+                    <span className="text-[10px] font-bold tracking-widest uppercase" style={{ color: "#34d399", fontFamily: "var(--font-mono)" }}>Papelaria &amp; Geral</span>
+                    <a href={PHONE_PAPELARIA_HREF} className="text-sm transition-colors hover:text-[var(--blue)]">
+                      {PHONE_PAPELARIA_DISPLAY}
+                    </a>
+                  </div>
+                </div>
               </div>
               <div className="flex items-center gap-2.5" style={{ color: "rgba(255,255,255,0.65)" }}>
                 <Clock size={14} strokeWidth={1.5} aria-hidden="true" />
