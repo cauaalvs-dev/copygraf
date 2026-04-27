@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
-import { WHATSAPP_URL, PHONE_HREF, PHONE_DISPLAY } from "@/app/lib/constants";
+import { WHATSAPP_GRAFICA_URL, WHATSAPP_PAPELARIA_URL, PHONE_GRAFICA_HREF, PHONE_GRAFICA_DISPLAY, PHONE_PAPELARIA_HREF, PHONE_PAPELARIA_DISPLAY } from "@/app/lib/constants";
+import { Printer, ShoppingBag } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -58,16 +59,19 @@ export default function Hero() {
         </div>
 
         <div className="flex flex-col gap-2 relative z-10">
-          <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer"
-            aria-label="Solicitar orçamento via WhatsApp"
-            className="inline-flex items-center justify-center gap-2 w-full py-3 rounded-xl text-sm font-bold"
+          <a href={WHATSAPP_GRAFICA_URL} target="_blank" rel="noopener noreferrer"
+            aria-label="WhatsApp Gráfica"
+            className="flex items-center justify-between w-full px-4 py-3 rounded-xl text-sm font-bold"
             style={{ background: "#fff", color: "#1a56db" }}>
-            Chama no WhatsApp <ArrowRight size={14} strokeWidth={2.5} aria-hidden="true" />
+            <span className="flex items-center gap-2"><Printer size={13} aria-hidden="true" />Gráfica &amp; Design</span>
+            <ArrowRight size={13} strokeWidth={2.5} aria-hidden="true" />
           </a>
-          <a href={PHONE_HREF} aria-label="Ligar"
-            className="inline-flex items-center justify-center w-full py-3 rounded-xl text-sm font-semibold"
-            style={{ border: "1px solid rgba(255,255,255,0.25)", color: "#fff", background: "rgba(255,255,255,0.1)" }}>
-            {PHONE_DISPLAY}
+          <a href={WHATSAPP_PAPELARIA_URL} target="_blank" rel="noopener noreferrer"
+            aria-label="WhatsApp Papelaria"
+            className="flex items-center justify-between w-full px-4 py-3 rounded-xl text-sm font-bold"
+            style={{ border: "1px solid rgba(255,255,255,0.25)", color: "#fff", background: "rgba(255,255,255,0.08)" }}>
+            <span className="flex items-center gap-2"><ShoppingBag size={13} aria-hidden="true" />Papelaria &amp; Geral</span>
+            <ArrowRight size={13} strokeWidth={2.5} aria-hidden="true" />
           </a>
         </div>
       </div>
@@ -93,16 +97,17 @@ export default function Hero() {
               Precisou pra hoje? <strong className="text-white">Chama.</strong>
             </p>
             <div className="flex gap-3 mb-8">
-              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer"
-                aria-label="Orçamento via WhatsApp"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl text-sm font-bold hover:opacity-90 transition-opacity"
+              <a href={WHATSAPP_GRAFICA_URL} target="_blank" rel="noopener noreferrer"
+                aria-label="WhatsApp Gráfica"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-sm font-bold hover:opacity-90 transition-opacity"
                 style={{ background: "#fff", color: "#1a56db", boxShadow: "0 4px 16px rgba(0,0,0,.25)" }}>
-                Chama no WhatsApp <ArrowRight size={15} strokeWidth={2.5} aria-hidden="true" />
+                <Printer size={14} aria-hidden="true" /> Gráfica <ArrowRight size={14} strokeWidth={2.5} aria-hidden="true" />
               </a>
-              <a href={PHONE_HREF} aria-label="Ligar"
+              <a href={WHATSAPP_PAPELARIA_URL} target="_blank" rel="noopener noreferrer"
+                aria-label="WhatsApp Papelaria"
                 className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-sm font-semibold hover:bg-white/20 transition-colors"
                 style={{ border: "1px solid rgba(255,255,255,0.3)", color: "#fff", background: "rgba(255,255,255,0.1)" }}>
-                {PHONE_DISPLAY}
+                <ShoppingBag size={14} aria-hidden="true" /> Papelaria
               </a>
             </div>
             <div className="flex items-center gap-5">
@@ -136,19 +141,20 @@ export default function Hero() {
               <p className="text-xs font-semibold uppercase tracking-widest mb-1"
                 style={{ color: "rgba(255,255,255,0.6)", fontFamily: "var(--font-mono)" }}>Fale agora</p>
               <h2 className="font-bold text-lg mb-5 text-white">Solicite seu orçamento</h2>
-              <div className="flex flex-col gap-3 mb-5">
-                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer"
-                  aria-label="WhatsApp"
+              <div className="flex flex-col gap-2.5 mb-5">
+                <a href={WHATSAPP_GRAFICA_URL} target="_blank" rel="noopener noreferrer"
+                  aria-label="WhatsApp Gráfica"
                   className="flex items-center justify-between w-full px-4 py-3 rounded-xl text-sm font-bold text-white hover:opacity-90 transition-opacity"
-                  style={{ background: "linear-gradient(135deg,#25d366,#128c4e)" }}>
-                  <span>WhatsApp</span>
-                  <span className="text-xs font-normal opacity-80">Resposta rápida</span>
+                  style={{ background: "rgba(147,197,253,0.12)", border: "1px solid rgba(147,197,253,0.25)" }}>
+                  <span className="flex items-center gap-2"><Printer size={13} aria-hidden="true" style={{ color: "#93c5fd" }} /><span style={{ color: "#93c5fd" }}>Gráfica &amp; Design</span></span>
+                  <span className="text-xs font-mono" style={{ color: "rgba(255,255,255,0.5)" }}>{PHONE_GRAFICA_DISPLAY}</span>
                 </a>
-                <a href={PHONE_HREF} aria-label="Ligar"
-                  className="flex items-center justify-between w-full px-4 py-3 rounded-xl text-sm font-semibold hover:bg-white/20 transition-colors"
-                  style={{ border: "1px solid rgba(255,255,255,0.2)", color: "#fff", background: "rgba(255,255,255,0.08)" }}>
-                  <span>{PHONE_DISPLAY}</span>
-                  <span className="text-xs opacity-50">Ligar</span>
+                <a href={WHATSAPP_PAPELARIA_URL} target="_blank" rel="noopener noreferrer"
+                  aria-label="WhatsApp Papelaria"
+                  className="flex items-center justify-between w-full px-4 py-3 rounded-xl text-sm font-bold text-white hover:opacity-90 transition-opacity"
+                  style={{ background: "rgba(110,231,183,0.10)", border: "1px solid rgba(110,231,183,0.22)" }}>
+                  <span className="flex items-center gap-2"><ShoppingBag size={13} aria-hidden="true" style={{ color: "#6ee7b7" }} /><span style={{ color: "#6ee7b7" }}>Papelaria &amp; Geral</span></span>
+                  <span className="text-xs font-mono" style={{ color: "rgba(255,255,255,0.5)" }}>{PHONE_PAPELARIA_DISPLAY}</span>
                 </a>
               </div>
               <div className="grid grid-cols-3 gap-2 pt-4" style={{ borderTop: "1px solid rgba(255,255,255,0.15)" }}>

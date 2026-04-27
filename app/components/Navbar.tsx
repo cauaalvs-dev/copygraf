@@ -3,7 +3,7 @@
 import { useEffect, useState, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Phone, MapPin, Clock, X, Menu, Printer, ShoppingBag } from "lucide-react";
+import { MapPin, Clock, X, Menu, Printer, ShoppingBag } from "lucide-react";
 import {
   PHONE_GRAFICA_HREF, PHONE_GRAFICA_DISPLAY, WHATSAPP_GRAFICA_URL,
   PHONE_PAPELARIA_HREF, PHONE_PAPELARIA_DISPLAY, WHATSAPP_PAPELARIA_URL,
@@ -37,62 +37,66 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Topbar — dual channel */}
-      <div className="hidden lg:block bg-[#091d4f] border-b border-white/10">
-        <div className="max-w-[1200px] mx-auto px-6 h-10 flex items-center justify-between text-xs">
+      {/* Topbar — dual channel, tom bem sutil */}
+      <div className="hidden lg:block border-b" style={{ background: "#07194a", borderColor: "rgba(255,255,255,0.07)" }}>
+        <div className="max-w-[1200px] mx-auto px-6 h-9 flex items-center justify-between" style={{ fontSize: 11 }}>
 
-          {/* left — info */}
-          <div className="flex items-center gap-5 text-blue-200/70">
+          {/* esquerda — localização e horário */}
+          <div className="flex items-center gap-4" style={{ color: "rgba(255,255,255,0.40)" }}>
             <span className="flex items-center gap-1.5">
-              <MapPin size={11} aria-hidden="true" />
+              <MapPin size={10} aria-hidden="true" />
               Caucaia, CE — Parque Guadalajara
             </span>
+            <span aria-hidden="true">·</span>
             <span className="flex items-center gap-1.5">
-              <Clock size={11} aria-hidden="true" />
+              <Clock size={10} aria-hidden="true" />
               Seg–Sex 08h–18h · Sáb 08h–12h
             </span>
           </div>
 
-          {/* right — dois canais */}
-          <div className="flex items-center divide-x divide-white/10">
+          {/* direita — dois canais */}
+          <div className="flex items-center">
 
             {/* Gráfica */}
-            <div className="flex items-center gap-3 pr-5">
-              <span className="flex items-center gap-1 font-semibold tracking-wide" style={{ color: "#6ea0ff", fontFamily: "var(--font-mono)" }}>
-                <Printer size={11} aria-hidden="true" />
+            <div className="flex items-center gap-2 pr-4">
+              <Printer size={10} style={{ color: "rgba(147,197,253,0.55)" }} aria-hidden="true" />
+              <span style={{ color: "rgba(147,197,253,0.65)", fontFamily: "var(--font-mono)", letterSpacing: "0.03em" }}>
                 Gráfica &amp; Design
               </span>
               <a href={PHONE_GRAFICA_HREF}
-                className="flex items-center gap-1 font-mono font-semibold text-white hover:text-blue-200 transition-colors"
+                className="transition-colors hover:text-white"
+                style={{ color: "rgba(255,255,255,0.65)", fontFamily: "var(--font-mono)" }}
                 aria-label="Ligar para gráfica">
-                <Phone size={10} aria-hidden="true" />
                 {PHONE_GRAFICA_DISPLAY}
               </a>
               <a href={WHATSAPP_GRAFICA_URL} target="_blank" rel="noopener noreferrer"
-                className="px-2.5 py-0.5 rounded-md text-[11px] font-bold transition-colors hover:opacity-80"
-                style={{ background: "rgba(26,86,219,0.25)", color: "#93c5fd", border: "1px solid rgba(26,86,219,0.35)" }}
+                className="transition-opacity hover:opacity-100"
+                style={{ color: "rgba(147,197,253,0.55)" }}
                 aria-label="WhatsApp gráfica">
-                WA
+                · WA
               </a>
             </div>
 
+            {/* divisor */}
+            <span style={{ width: 1, height: 14, background: "rgba(255,255,255,0.10)", display: "block" }} aria-hidden="true" />
+
             {/* Papelaria */}
-            <div className="flex items-center gap-3 pl-5">
-              <span className="flex items-center gap-1 font-semibold tracking-wide" style={{ color: "#34d399", fontFamily: "var(--font-mono)" }}>
-                <ShoppingBag size={11} aria-hidden="true" />
+            <div className="flex items-center gap-2 pl-4">
+              <ShoppingBag size={10} style={{ color: "rgba(110,231,183,0.55)" }} aria-hidden="true" />
+              <span style={{ color: "rgba(110,231,183,0.65)", fontFamily: "var(--font-mono)", letterSpacing: "0.03em" }}>
                 Papelaria &amp; Geral
               </span>
               <a href={PHONE_PAPELARIA_HREF}
-                className="flex items-center gap-1 font-mono font-semibold text-white hover:text-green-200 transition-colors"
+                className="transition-colors hover:text-white"
+                style={{ color: "rgba(255,255,255,0.65)", fontFamily: "var(--font-mono)" }}
                 aria-label="Ligar para papelaria">
-                <Phone size={10} aria-hidden="true" />
                 {PHONE_PAPELARIA_DISPLAY}
               </a>
               <a href={WHATSAPP_PAPELARIA_URL} target="_blank" rel="noopener noreferrer"
-                className="px-2.5 py-0.5 rounded-md text-[11px] font-bold transition-colors hover:opacity-80"
-                style={{ background: "rgba(5,150,105,0.25)", color: "#6ee7b7", border: "1px solid rgba(5,150,105,0.35)" }}
+                className="transition-opacity hover:opacity-100"
+                style={{ color: "rgba(110,231,183,0.55)" }}
                 aria-label="WhatsApp papelaria">
-                WA
+                · WA
               </a>
             </div>
 
@@ -100,20 +104,21 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Header */}
+      {/* Header principal */}
       <header
-        className={`sticky top-0 z-[100] bg-[#0f2d6b] transition-all duration-200 ${
-          scrolled ? "shadow-[0_2px_20px_rgba(0,0,0,0.25)]" : "border-b border-[rgba(255,255,255,0.12)]"
+        className={`sticky top-0 z-[100] transition-all duration-200 ${
+          scrolled ? "shadow-[0_2px_24px_rgba(0,0,0,0.30)]" : "border-b border-white/10"
         }`}
+        style={{ background: "#0f2d6b" }}
         role="banner"
       >
         <div className="max-w-[1200px] mx-auto px-6 flex items-center justify-between h-[72px] gap-6">
+
           <Link href="#hero" aria-label="Copygraf — página inicial" className="shrink-0">
             <Image
               src="/logo-copygraf.webp"
               alt="Copygraf Gráfica Digital & Papelaria"
-              width={160}
-              height={80}
+              width={160} height={80}
               className="h-12 w-auto object-contain"
               priority
             />
@@ -122,26 +127,26 @@ export default function Navbar() {
           <nav aria-label="Navegação principal" className="hidden lg:flex items-center gap-1">
             {NAV_LINKS.map(({ href, label }) => (
               <Link key={href} href={href}
-                className="px-4 py-2 rounded-lg text-sm font-medium text-white/70 hover:text-white hover:bg-white/10 transition-all duration-150">
+                className="px-4 py-2 rounded-lg text-sm font-medium text-white/65 hover:text-white hover:bg-white/10 transition-all duration-150">
                 {label}
               </Link>
             ))}
           </nav>
 
-          {/* Header CTAs — dois botões distintos */}
+          {/* CTAs — pills outline, sem peso visual */}
           <div className="hidden lg:flex items-center gap-2 shrink-0">
             <a href={WHATSAPP_GRAFICA_URL} target="_blank" rel="noopener noreferrer"
-              className="flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-bold transition-all hover:opacity-85"
-              style={{ background: "rgba(26,86,219,0.20)", color: "#93c5fd", border: "1px solid rgba(26,86,219,0.30)" }}
+              className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[12px] font-semibold transition-all hover:bg-white/10"
+              style={{ border: "1px solid rgba(147,197,253,0.35)", color: "rgba(147,197,253,0.85)" }}
               aria-label="WhatsApp Gráfica">
-              <Printer size={13} aria-hidden="true" />
+              <Printer size={12} aria-hidden="true" />
               Gráfica
             </a>
             <a href={WHATSAPP_PAPELARIA_URL} target="_blank" rel="noopener noreferrer"
-              className="flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-bold transition-all hover:opacity-85"
-              style={{ background: "rgba(5,150,105,0.20)", color: "#6ee7b7", border: "1px solid rgba(5,150,105,0.30)" }}
+              className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[12px] font-semibold transition-all hover:bg-white/10"
+              style={{ border: "1px solid rgba(110,231,183,0.35)", color: "rgba(110,231,183,0.85)" }}
               aria-label="WhatsApp Papelaria">
-              <ShoppingBag size={13} aria-hidden="true" />
+              <ShoppingBag size={12} aria-hidden="true" />
               Papelaria
             </a>
           </div>
@@ -159,7 +164,8 @@ export default function Navbar() {
       {/* Mobile nav */}
       {menuOpen && (
         <nav id="mobileNav"
-          className="fixed inset-0 z-[99] flex flex-col items-center justify-center gap-5 bg-[#0f2d6b]"
+          className="fixed inset-0 z-[99] flex flex-col items-center justify-center gap-5"
+          style={{ background: "#0f2d6b" }}
           aria-label="Menu mobile" role="dialog" aria-modal="true"
         >
           <button
@@ -168,29 +174,42 @@ export default function Navbar() {
           >
             <X size={20} />
           </button>
+
           <Image src="/logo-copygraf.webp" alt="Copygraf" width={140} height={70}
             className="h-12 w-auto object-contain mb-2" />
 
           {NAV_LINKS.map(({ href, label }) => (
             <Link key={href} href={href} onClick={closeMenu}
-              className="text-xl font-semibold text-white hover:text-white/80 transition-colors">
+              className="text-xl font-semibold text-white/80 hover:text-white transition-colors">
               {label}
             </Link>
           ))}
 
-          {/* Mobile — dois botões de canal */}
-          <div className="mt-4 flex flex-col gap-3 w-full max-w-[260px]">
+          {/* Mobile — dois canais */}
+          <div className="mt-5 flex flex-col gap-3 w-full max-w-[280px]">
             <a href={WHATSAPP_GRAFICA_URL} target="_blank" rel="noopener noreferrer" onClick={closeMenu}
-              className="flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-sm font-bold"
-              style={{ background: "rgba(26,86,219,0.25)", color: "#93c5fd", border: "1px solid rgba(26,86,219,0.4)" }}>
-              <Printer size={15} aria-hidden="true" />
-              Gráfica &amp; Design · {PHONE_GRAFICA_DISPLAY}
+              className="flex items-center justify-between px-5 py-3.5 rounded-2xl transition-opacity hover:opacity-85"
+              style={{ background: "rgba(147,197,253,0.08)", border: "1px solid rgba(147,197,253,0.25)" }}>
+              <div className="flex items-center gap-2.5">
+                <Printer size={15} style={{ color: "rgba(147,197,253,0.8)" }} aria-hidden="true" />
+                <div>
+                  <div className="text-xs font-bold" style={{ color: "rgba(147,197,253,0.9)" }}>Gráfica &amp; Design</div>
+                  <div className="text-sm font-mono text-white">{PHONE_GRAFICA_DISPLAY}</div>
+                </div>
+              </div>
+              <span className="text-xs font-bold" style={{ color: "rgba(147,197,253,0.6)" }}>WA</span>
             </a>
             <a href={WHATSAPP_PAPELARIA_URL} target="_blank" rel="noopener noreferrer" onClick={closeMenu}
-              className="flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-sm font-bold"
-              style={{ background: "rgba(5,150,105,0.25)", color: "#6ee7b7", border: "1px solid rgba(5,150,105,0.4)" }}>
-              <ShoppingBag size={15} aria-hidden="true" />
-              Papelaria &amp; Geral · {PHONE_PAPELARIA_DISPLAY}
+              className="flex items-center justify-between px-5 py-3.5 rounded-2xl transition-opacity hover:opacity-85"
+              style={{ background: "rgba(110,231,183,0.08)", border: "1px solid rgba(110,231,183,0.25)" }}>
+              <div className="flex items-center gap-2.5">
+                <ShoppingBag size={15} style={{ color: "rgba(110,231,183,0.8)" }} aria-hidden="true" />
+                <div>
+                  <div className="text-xs font-bold" style={{ color: "rgba(110,231,183,0.9)" }}>Papelaria &amp; Geral</div>
+                  <div className="text-sm font-mono text-white">{PHONE_PAPELARIA_DISPLAY}</div>
+                </div>
+              </div>
+              <span className="text-xs font-bold" style={{ color: "rgba(110,231,183,0.6)" }}>WA</span>
             </a>
           </div>
         </nav>
