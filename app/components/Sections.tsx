@@ -94,10 +94,9 @@ export function Portfolio() {
               muted
               loop
               playsInline
-              preload="none"
+              preload="metadata"
               aria-label="Vídeo de produção de cartão de visita na Copygraf"
             >
-              <source src="/video-producao-mobile.mp4" type="video/mp4" media="(max-width: 767px)" />
               <source src="/video-producao.mp4" type="video/mp4" />
             </video>
             <div className="absolute inset-0 pointer-events-none"
