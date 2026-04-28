@@ -86,7 +86,7 @@ export function Portfolio() {
 
         <div className="grid grid-cols-1 md:grid-cols-[1fr_320px] lg:grid-cols-[1fr_380px] gap-8 items-start anim-fade-up anim-delay-1">
           <div
-            className="rounded-2xl p-10 flex flex-col items-start gap-6"
+            className="rounded-2xl p-10 flex flex-col items-start gap-6 border"
             style={{ borderColor: "rgba(255,255,255,0.12)" }}>
             <div>
               <p className="font-bold text-xl mb-2" style={{ color: "#fff" }}>
@@ -243,7 +243,7 @@ export function Faq() {
                     </span>
                   </button>
                   <div id={item.id} role="region"
-                    style={{ maxHeight: isOpen ? 200 : 0, overflow: "hidden", transition: "max-height .3s cubic-bezier(.4,0,.2,1)" }}>
+                    style={{ maxHeight: isOpen ? 500 : 0, overflow: "hidden", transition: "max-height .3s cubic-bezier(.4,0,.2,1)" }}>
                     <p className="px-5 pb-5 text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.65)" }}>
                       {item.answer}
                     </p>
@@ -325,10 +325,10 @@ export function CtaBand() {
                   Solicitar Orçamento via WhatsApp
                   <ArrowRight size={15} strokeWidth={2.5} aria-hidden="true" />
                 </a>
-                <a href={PHONE_HREF} aria-label="Ligar para a Copygraf"
+                <a href={PHONE_PAPELARIA_HREF} aria-label="Ligar para Papelaria"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-sm font-bold text-white transition-all hover:opacity-90"
                   style={{ background: "rgba(255,255,255,0.12)", border: "1px solid rgba(255,255,255,0.25)" }}>
-                  {PHONE_DISPLAY}
+                  {PHONE_PAPELARIA_DISPLAY}
                 </a>
               </div>
             </div>
@@ -457,7 +457,7 @@ export function Footer() {
 /* ── WhatsApp FAB ── */
 export function WhatsAppFab() {
   return (
-    <a href="https://wa.me/558532389240?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento."
+    <a href={WHATSAPP_URL}
       target="_blank" rel="noopener noreferrer"
       aria-label="Falar com a Copygraf no WhatsApp"
       className="fixed bottom-6 right-6 z-[200] w-14 h-14 rounded-full flex items-center justify-center transition-transform duration-200 hover:scale-110 active:scale-95"
