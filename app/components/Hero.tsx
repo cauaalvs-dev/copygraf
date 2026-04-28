@@ -47,7 +47,7 @@ export default function Hero() {
           Gráfica rápida de verdade.<br />Precisou pra hoje? Chama.
         </p>
 
-        <div className="flex items-center gap-3 mb-5 relative z-10">
+        <div className="flex items-center flex-wrap gap-x-3 gap-y-1 mb-5 relative z-10">
           {["Desde 2004", "Expressa", "Mesmo dia"].map((item, i) => (
             <span key={item} className="flex items-center gap-1 text-[11px] font-medium whitespace-nowrap"
               style={{ color: "rgba(255,255,255,0.65)" }}>

@@ -49,7 +49,7 @@ export function Process() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 rounded-2xl overflow-hidden" role="list">
           {STEPS.map((step, i) => (
             <div key={step.number}
-              className={`p-7 anim-fade-up anim-delay-${i + 1}`}
+              className={`p-5 lg:p-7 anim-fade-up anim-delay-${i + 1}`}
               role="listitem">
               <div
                 className="w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold text-white mb-5"
@@ -86,7 +86,7 @@ export function Portfolio() {
 
         <div className="grid grid-cols-1 md:grid-cols-[1fr_320px] lg:grid-cols-[1fr_380px] gap-8 items-start anim-fade-up anim-delay-1">
           <div
-            className="rounded-2xl p-10 flex flex-col items-start gap-6 border"
+            className="rounded-2xl p-5 sm:p-10 flex flex-col items-start gap-6 border"
             style={{ borderColor: "rgba(255,255,255,0.12)" }}>
             <div>
               <p className="font-bold text-xl mb-2" style={{ color: "#fff" }}>
@@ -166,7 +166,7 @@ export function Testimonials() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {TESTIMONIALS.map((t, i) => (
             <article key={t.name}
-              className={`rounded-2xl border p-6 flex flex-col gap-4 transition-all hover:shadow-md hover:-translate-y-0.5 anim-fade-up anim-delay-${i + 1}`}
+              className={`rounded-2xl border p-6 flex flex-col gap-4 transition-all sm:hover:shadow-md sm:hover:-translate-y-0.5 anim-fade-up anim-delay-${i + 1}`}
               style={{ borderColor: "rgba(255,255,255,0.12)", background: "rgba(255,255,255,0.07)" }}>
               <div className="flex gap-0.5" aria-label={`${t.rating} de 5 estrelas`}>
                 {Array.from({ length: 5 }).map((_, j) => (
@@ -243,7 +243,7 @@ export function Faq() {
                     </span>
                   </button>
                   <div id={item.id} role="region"
-                    style={{ maxHeight: isOpen ? 500 : 0, overflow: "hidden", transition: "max-height .3s cubic-bezier(.4,0,.2,1)" }}>
+                    style={{ maxHeight: isOpen ? 600 : 0, overflowY: "auto", transition: "max-height .3s cubic-bezier(.4,0,.2,1)" }}>
                     <p className="px-5 pb-5 text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.65)" }}>
                       {item.answer}
                     </p>
@@ -298,8 +298,7 @@ export function CtaBand() {
                 alt="Dono da Copygraf"
                 width={110}
                 height={165}
-                className="object-contain select-none lg:w-[140px] lg:h-[210px]"
-                style={{ maxHeight: 165 }}
+                className="object-contain select-none w-[90px] h-[135px] lg:w-[140px] lg:h-[210px]"
               />
             </div>
 
@@ -322,7 +321,7 @@ export function CtaBand() {
                   aria-label="Solicitar orçamento via WhatsApp"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-sm font-bold transition-all hover:opacity-90"
                   style={{ background: "#fff", color: "#1a56db" }}>
-                  Solicitar Orçamento via WhatsApp
+                  Solicitar Orçamento
                   <ArrowRight size={15} strokeWidth={2.5} aria-hidden="true" />
                 </a>
                 <a href={PHONE_PAPELARIA_HREF} aria-label="Ligar para Papelaria"

@@ -186,7 +186,7 @@ export default function Navbar() {
           ))}
 
           {/* Mobile — dois canais */}
-          <div className="mt-5 flex flex-col gap-3 w-full max-w-[280px]">
+          <div className="mt-5 flex flex-col gap-3 w-[90vw] max-w-[340px]">
             <a href={WHATSAPP_GRAFICA_URL} target="_blank" rel="noopener noreferrer" onClick={closeMenu}
               className="flex items-center justify-between px-5 py-3.5 rounded-2xl transition-opacity hover:opacity-85"
               style={{ background: "rgba(147,197,253,0.08)", border: "1px solid rgba(147,197,253,0.25)" }}>

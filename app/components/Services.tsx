@@ -75,8 +75,8 @@ export default function Services() {
                 </div>
               </div>
 
-              <div className="text-right shrink-0 ml-2">
-                <div className="text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>Prazo</div>
+              <div className="text-right shrink-0 ml-2 min-w-[72px]">
+                <div className="hidden sm:block text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>Prazo</div>
                 <div className="text-xs sm:text-sm font-bold" style={{ color: "#fff" }}>
                   {svc.prazo}
                 </div>
