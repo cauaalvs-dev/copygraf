@@ -111,3 +111,19 @@ address { font-style: normal; }
   background: var(--blue);
   border-radius: 2px;
 }
+/* Respeitar preferências de movimento do sistema */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .marquee-track { animation: none; }
+}
+
+/* Conter will-change apenas onde necessário */
+.anim-slide-left,
+.anim-slide-right,
+.anim-fade-up {
+  will-change: opacity, transform;
+}

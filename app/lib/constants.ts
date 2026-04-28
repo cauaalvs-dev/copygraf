@@ -48,16 +48,16 @@ export interface FaqItem {
 
 export const SERVICES: Service[] = [
   {
-    name: "Fachadas em ACM",
-    description: "Sua empresa merece uma fachada que impressiona. Instalação com equipe própria.",
+    name: "Fachadas & Comunicação Visual",
+    description: "ACM, letras caixa, placas e sinalização. Instalação com equipe própria.",
     tag: "Comunicação Visual",
     icon: "acm",
   },
   {
-    name: "Letras Caixa",
-    description: "Com ou sem LED. Volume real, acabamento que faz seu nome brilhar.",
-    tag: "Sinalização 3D",
-    icon: "letras",
+    name: "Envelopamento & Adesivos",
+    description: "Frotas, vitrines, paredes e fachadas. Adesivos que cobrem tudo.",
+    tag: "Adesivação",
+    icon: "banner",
   },
   {
     name: "Impressão UV",
@@ -72,8 +72,8 @@ export const SERVICES: Service[] = [
     icon: "banner",
   },
   {
-    name: "Camisetas & Uniformes",
-    description: "Sublimação, silk e DTF. Do pedido único ao kit corporativo completo.",
+    name: "DTF Têxtil & Sublimação",
+    description: "Camisetas, uniformes e brindes. Peça única ou kit corporativo completo.",
     tag: "Vestuário",
     icon: "camiseta",
   },

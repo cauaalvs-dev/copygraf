@@ -84,7 +84,36 @@ export function Portfolio() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-[1fr_320px] lg:grid-cols-[1fr_380px] gap-8 items-start anim-fade-up anim-delay-1">
+        {/* Vídeo de produção */}
+        <div className="mb-8 rounded-2xl overflow-hidden anim-fade-up anim-delay-1"
+          style={{ border: "1px solid rgba(255,255,255,0.12)" }}>
+          <div className="relative w-full" style={{ paddingBottom: "42%", background: "#000" }}>
+            <video
+              className="absolute inset-0 w-full h-full object-cover"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="none"
+              aria-label="Vídeo de produção de cartão de visita na Copygraf"
+            >
+              <source src="/video-producao-mobile.mp4" type="video/mp4" media="(max-width: 767px)" />
+              <source src="/video-producao.mp4" type="video/mp4" />
+            </video>
+            <div className="absolute inset-0 pointer-events-none"
+              style={{ background: "linear-gradient(to right, rgba(13,38,96,0.4) 0%, transparent 40%, transparent 60%, rgba(13,38,96,0.4) 100%)" }}
+              aria-hidden="true" />
+            <div className="absolute bottom-4 left-5 flex items-center gap-2 px-3 py-1.5 rounded-lg"
+              style={{ background: "rgba(0,0,0,0.70)" }}>
+              <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" aria-hidden="true" />
+              <span className="text-xs font-semibold text-white" style={{ fontFamily: "var(--font-mono)" }}>
+                Produção em tempo real · Cartão de Visita
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_320px] lg:grid-cols-[1fr_380px] gap-8 items-start anim-fade-up anim-delay-2">
           <div
             className="rounded-2xl p-5 sm:p-10 flex flex-col items-start gap-6 border"
             style={{ borderColor: "rgba(255,255,255,0.12)" }}>
@@ -93,7 +122,7 @@ export function Portfolio() {
                 431 publicações no Instagram
               </p>
               <p className="text-sm leading-relaxed text-white/65">
-                Cada foto é um projeto real entregue — fachadas, banners, camisetas, letras caixa e muito mais.
+                Cada foto é um projeto real entregue — fachadas, banners, DTF têxtil, envelopamento e muito mais.
                 Nada de stock. Tudo da Copygraf.
               </p>
             </div>
@@ -108,10 +137,10 @@ export function Portfolio() {
 
           <div className="flex flex-col gap-4">
             {[
-              { label: "Fachadas em ACM",    count: "fachadas",  color: "#1a56db" },
-              { label: "Banners & Lonas",    count: "banners",   color: "#0891b2" },
-              { label: "Camisetas",          count: "uniformes", color: "#059669" },
-              { label: "Papelaria",          count: "impressos", color: "#7c3aed" },
+              { label: "Fachadas & Comunicação Visual", color: "#1a56db" },
+              { label: "Envelopamento & Adesivos",      color: "#0891b2" },
+              { label: "DTF Têxtil & Sublimação",       color: "#059669" },
+              { label: "Papelaria Corporativa",         color: "#7c3aed" },
             ].map((item) => (
               <a key={item.label} href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer"
                 aria-label={`Ver ${item.label} no Instagram`}
@@ -259,7 +288,7 @@ export function Faq() {
 }
 
 /* ── Marquee ── */
-const MARQUEE_ITEMS = ["Fachada em ACM","Letras Caixa","Impressão UV","Banners & Lonas","Camisetas","Cartões de Visita","Papelaria Corporativa","Adesivos Personalizados"];
+const MARQUEE_ITEMS = ["Fachadas & Comunicação Visual","Envelopamento & Adesivos","Impressão UV","Banners & Lonas","DTF Têxtil & Sublimação","Cartões de Visita","Papelaria Corporativa","Adesivos Personalizados"];
 
 export function Marquee() {
   const doubled = [...MARQUEE_ITEMS, ...MARQUEE_ITEMS];
@@ -340,7 +369,7 @@ export function CtaBand() {
 }
 
 /* ── Footer ── */
-const SVC_LINKS = ["Fachadas em ACM","Letras Caixa","Impressão UV","Banners & Lonas","Camisetas & Uniformes","Papelaria Corporativa"];
+const SVC_LINKS = ["Fachadas & Comunicação Visual","Envelopamento & Adesivos","Impressão UV","Banners & Lonas","DTF Têxtil & Sublimação","Papelaria Corporativa"];
 const NAV_LINKS_F = [
   { href: "#processo",    label: "Como Funciona",  external: false },
   { href: "#portfolio",   label: "Portfólio",       external: false },

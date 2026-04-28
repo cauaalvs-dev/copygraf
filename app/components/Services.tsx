@@ -5,12 +5,12 @@ import { WHATSAPP_URL } from "@/app/lib/constants";
 import { ArrowRight } from "lucide-react";
 
 const SERVICES = [
-  { name: "Fachadas em ACM",       desc: "Impressiona quem chega · Instalação própria · Durabilidade total", prazo: "Sob consulta" },
-  { name: "Letras Caixa",          desc: "Com ou sem LED · Acrílico, PVC ou metal · Volume real",        prazo: "Sob consulta" },
-  { name: "Impressão UV",          desc: "Cor que não desbota · Rígido, madeira, acrílico e mais",       prazo: "2–4 dias úteis" },
-  { name: "Banners & Lonas",       desc: "Evento amanhã? Entrega hoje · Alta resolução",                 prazo: "1–3 dias úteis" },
-  { name: "Camisetas & Uniformes", desc: "Sublimação · Silk · DTF · Peça única ou kit completo",        prazo: "3–5 dias úteis" },
-  { name: "Papelaria Corporativa", desc: "Cartão, flyer, folder · Do pedido à entrega em 1–2 dias",     prazo: "1–2 dias úteis" },
+  { name: "Fachadas & Comunicação Visual", desc: "ACM, letras caixa, placas · Instalação própria · Durabilidade total", prazo: "Sob consulta" },
+  { name: "Envelopamento & Adesivos",      desc: "Frotas, vitrines, paredes · Adesivos que cobrem tudo",              prazo: "Sob consulta" },
+  { name: "Impressão UV",                  desc: "Cor que não desbota · Rígido, madeira, acrílico e mais",            prazo: "2–4 dias úteis" },
+  { name: "Banners & Lonas",               desc: "Evento amanhã? Entrega hoje · Alta resolução",                      prazo: "1–3 dias úteis" },
+  { name: "DTF Têxtil & Sublimação",       desc: "Camisetas, uniformes, brindes · Peça única ou kit completo",       prazo: "3–5 dias úteis" },
+  { name: "Papelaria Corporativa",         desc: "Cartão, flyer, folder · Do pedido à entrega em 1–2 dias",          prazo: "1–2 dias úteis" },
 ];
 
 export default function Services() {

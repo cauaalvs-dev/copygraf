@@ -137,7 +137,7 @@ export default function Hero() {
           {/* MIDDLE — contact card */}
           <div className="pb-16">
             <div className="rounded-2xl p-6"
-              style={{ background: "rgba(255,255,255,0.1)", backdropFilter: "blur(12px)", border: "1px solid rgba(255,255,255,0.2)" }}>
+              style={{ background: "rgba(255,255,255,0.10)", border: "1px solid rgba(255,255,255,0.18)" }}>
               <p className="text-xs font-semibold uppercase tracking-widest mb-1"
                 style={{ color: "rgba(255,255,255,0.6)", fontFamily: "var(--font-mono)" }}>Fale agora</p>
               <h2 className="font-bold text-lg mb-5 text-white">Solicite seu orçamento</h2>
